@@ -1,0 +1,61 @@
+{
+"securityZoneRolls": {
+        "secure": {"min": 0.7, "max": 1.0, "belt_chance_modifier": 0, "belt_min": 1, "belt_max": 3, "belt_die": "d3", "asteroid_max": 2, "yield_advantage": false, "extra_asteroids_min": 0, "extra_asteroids_max": 0},
+        "moderate": {"min": 0.3, "max": 0.6, "belt_chance_modifier": 10, "belt_min": 1, "belt_max": 4, "belt_die": "d4", "asteroid_max": 3, "yield_advantage": false, "extra_asteroids_min": 0, "extra_asteroids_max": 0},
+        "risky": {"min": 0.05, "max": 0.29, "belt_chance_modifier": 20, "belt_min": 1, "belt_max": 5, "belt_die": "d5", "asteroid_max": 4, "yield_advantage": true, "extra_asteroids_min": 0, "extra_asteroids_max": 2},
+        "unsecure": {"min": 0.0, "max": 0.04, "belt_chance_modifier": 30, "belt_min": 1, "belt_max": 6, "belt_die": "d6", "asteroid_max": 5, "yield_advantage": true, "extra_asteroids_min": 0, "extra_asteroids_max": 3}
+    },
+    "systemVariables": {
+        "planetCount": {"min": 0, "max": 4},
+        "asteroidChance": 60,
+        "moonCount": {"min": 1, "max": 5},
+        "moonChance": 0.5,
+        "objectIdRange": {"min": 1, "max": 100}
+    },
+    "celestial_objects": {
+        "stars": [
+            {"name": "Red Dwarf", "chance": 0.40},
+            {"name": "Yellow Main Sequence", "chance": 0.35},
+            {"name": "Blue Giant", "chance": 0.15},
+            {"name": "White Dwarf", "chance": 0.10}
+        ],
+        "planets": [
+            {"name": "Rocky Planet", "chance": 0.30},
+            {"name": "Gas Giant", "chance": 0.25},
+            {"name": "Ice World", "chance": 0.20},
+            {"name": "Desert Planet", "chance": 0.15},
+            {"name": "Ocean World", "chance": 0.10}
+        ],
+        "moons": [
+            {"name": "Barren Moon", "chance": 0.35},
+            {"name": "Icy Moon", "chance": 0.25},
+            {"name": "Volcanic Moon", "chance": 0.20},
+            {"name": "Temperate Moon", "chance": 0.15},
+            {"name": "Toxic Moon", "chance": 0.05}
+        ]
+    },
+    "asteroid_fields": {
+        "types": [
+            {"name": "Barren", "chance": 0.40, "min_objects": 1, "max_objects": 3},
+            {"name": "Sparse", "chance": 0.30, "min_objects": 2, "max_objects": 5},
+            {"name": "Moderate", "chance": 0.20, "min_objects": 3, "max_objects": 7},
+            {"name": "Rich", "chance": 0.10, "min_objects": 5, "max_objects": 10}
+        ]
+    },
+    "man_made_objects": [
+        {"name": "Space Station", "chance": 0.20},
+        {"name": "Moon Outpost", "chance": 0.25},
+        {"name": "Orbital Platform", "chance": 0.15},
+        {"name": "Abandoned Settlement", "chance": 0.10},
+        {"name": "Mining Station", "chance": 0.15},
+        {"name": "Research Post", "chance": 0.15}
+    ],
+    "unknown_objects": [
+        {"name": "Distress Beacon", "chance": 0.30},
+        {"name": "Small Conflict Zone", "chance": 0.25, "wreckage": 1},
+        {"name": "Medium Conflict Zone", "chance": 0.15, "wreckage": 3},
+        {"name": "Large Conflict Zone", "chance": 0.10, "wreckage": 5},
+        {"name": "Ancient Ruins", "chance": 0.10},
+        {"name": "Unidentified Signal", "chance": 0.10}
+    ]
+}

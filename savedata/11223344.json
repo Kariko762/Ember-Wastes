@@ -1,0 +1,149 @@
+{
+    "player": {
+        "location": "Blue Giant System",
+        "energy": 354,
+        "universal_signature": 30,
+        "name": "Player Fighter",
+        "class": "Fighter",
+        "alignment": "Player",
+        "hull": 46,
+        "max_hull": 46,
+        "shield": 24,
+        "max_shield": 24,
+        "power": 42,
+        "max_energy": 174,
+        "storage": 30,
+        "level": 3,
+        "initiative_modifier": 4,
+        "armor_class": 16,
+        "disengage": 10,
+        "weapons": [
+            {
+                "name": "Laser",
+                "damage": "d8"
+            }
+        ],
+        "security_zone": 0.3,
+        "max_power": 100,
+        "max_storage": 50,
+        "damage": 10,
+        "ship_class": "Scout"
+    },
+    "shipInventory": [
+        {
+            "name": "Scrap Metal",
+            "quantity": 2
+        },
+        {
+            "name": "Circuit Board",
+            "quantity": 4
+        }
+    ],
+    "homeInventory": [
+        {
+            "name": "Scrap Metal",
+            "quantity": 5
+        },
+        {
+            "name": "Circuit Board",
+            "quantity": 3
+        }
+    ],
+    "explored": true,
+    "current_system": {
+        "star": "Blue Giant",
+        "system_id": "SYS7929",
+        "children": [
+            {
+                "type": "Planet",
+                "name": "Rocky Planet P-RP5166",
+                "children": [
+                    {
+                        "type": "Man-Made",
+                        "name": "Orbital Platform P-RP5166[OP]",
+                        "scavenged": true
+                    }
+                ]
+            },
+            {
+                "type": "Planet",
+                "name": "Desert Planet P-DP6237",
+                "children": [
+                    {
+                        "type": "Moon",
+                        "name": "Barren Moon P-DP6237[MN-1-BM]"
+                    },
+                    {
+                        "type": "Moon",
+                        "name": "Barren Moon P-DP6237[MN-2-BM]"
+                    },
+                    {
+                        "type": "Man-Made",
+                        "name": "Space Station P-DP6237[SS]",
+                        "scavenged": true
+                    },
+                    {
+                        "type": "Man-Made",
+                        "name": "Moon Outpost P-DP6237[MO]",
+                        "scavenged": true
+                    },
+                    {
+                        "type": "Man-Made",
+                        "name": "Orbital Platform P-DP6237[OP]"
+                    }
+                ]
+            },
+            {
+                "type": "Planet",
+                "name": "Rocky Planet P-RP2063",
+                "children": []
+            },
+            {
+                "name": "AB8016[BA]",
+                "type": "Asteroid Belt",
+                "yield": "Barren",
+                "children": [
+                    {
+                        "name": "Asteroid-AB8016[BA]-Alpha",
+                        "type": "Asteroid",
+                        "resources": []
+                    },
+                    {
+                        "name": "Asteroid-AB8016[BA]-Bravo",
+                        "type": "Asteroid",
+                        "resources": []
+                    },
+                    {
+                        "name": "Asteroid-AB8016[BA]-Charlie",
+                        "type": "Asteroid",
+                        "resources": []
+                    }
+                ]
+            },
+            {
+                "name": "AB7025[BA]",
+                "type": "Asteroid Belt",
+                "yield": "Barren",
+                "children": [
+                    {
+                        "name": "Asteroid-AB7025[BA]-Alpha",
+                        "type": "Asteroid",
+                        "resources": []
+                    },
+                    {
+                        "name": "Asteroid-AB7025[BA]-Bravo",
+                        "type": "Asteroid",
+                        "resources": []
+                    },
+                    {
+                        "name": "Asteroid-AB7025[BA]-Charlie",
+                        "type": "Asteroid",
+                        "resources": []
+                    }
+                ]
+            }
+        ]
+    },
+    "game_started": "2025-02-20",
+    "last_updated": "2025-02-20"
+}

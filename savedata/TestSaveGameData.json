@@ -1,0 +1,159 @@
+{
+    "player": {
+        "location": "Yellow Main Sequence System",
+        "energy": 500,
+        "universal_signature": 30,
+        "name": "Player Fighter",
+        "class": "Fighter",
+        "alignment": "Player",
+        "hull": 31,
+        "max_hull": 31,
+        "shield": 19,
+        "max_shield": 19,
+        "power": 36,
+        "max_energy": 132,
+        "storage": 84,
+        "level": 5,
+        "initiative_modifier": 3,
+        "armor_class": 14,
+        "disengage": 10,
+        "weapons": [
+            {
+                "name": "Laser",
+                "damage": "d8"
+            }
+        ],
+        "security_zone": 0.3,
+        "max_power": 100,
+        "max_storage": 50,
+        "damage": 10,
+        "ship_class": "Scout"
+    },
+    "shipInventory": [],
+    "homeInventory": [
+        {
+            "name": "Scrap Metal",
+            "quantity": 10
+        },
+        {
+            "name": "Circuit Board",
+            "quantity": 5
+        }
+    ],
+    "explored": true,
+    "current_system": {
+        "star": "Yellow Main Sequence",
+        "system_id": "SYS7793",
+        "children": [
+            {
+                "type": "Planet",
+                "name": "Ocean World P-OW3091",
+                "children": [
+                    {
+                        "type": "Moon",
+                        "name": "Temperate Moon P-OW3091[MN-1-TM]"
+                    },
+                    {
+                        "type": "Man-Made",
+                        "name": "Moon Outpost P-OW3091[MO]"
+                    },
+                    {
+                        "type": "Man-Made",
+                        "name": "Orbital Platform P-OW3091[OP]"
+                    }
+                ]
+            },
+            {
+                "type": "Planet",
+                "name": "Desert Planet P-DP1114",
+                "children": []
+            },
+            {
+                "type": "Planet",
+                "name": "Ice World P-IW2709",
+                "children": [
+                    {
+                        "type": "Man-Made",
+                        "name": "Mining Station P-IW2709[MS]"
+                    }
+                ]
+            },
+            {
+                "type": "Planet",
+                "name": "Ice World P-IW9686",
+                "children": [
+                    {
+                        "type": "Moon",
+                        "name": "Volcanic Moon P-IW9686[MN-1-VM]"
+                    },
+                    {
+                        "type": "Moon",
+                        "name": "Barren Moon P-IW9686[MN-2-BM]"
+                    },
+                    {
+                        "type": "Moon",
+                        "name": "Barren Moon P-IW9686[MN-3-BM]"
+                    }
+                ]
+            },
+            {
+                "name": "AB8105[BA]",
+                "type": "Asteroid Belt",
+                "yield": "Barren",
+                "children": [
+                    {
+                        "name": "Asteroid-AB8105[BA]-Alpha",
+                        "type": "Asteroid",
+                        "resources": []
+                    }
+                ]
+            },
+            {
+                "name": "AB7591[MO]",
+                "type": "Asteroid Belt",
+                "yield": "Moderate",
+                "children": [
+                    {
+                        "name": "Asteroid-AB7591[MO]-Alpha",
+                        "type": "Asteroid",
+                        "resources": []
+                    },
+                    {
+                        "name": "Asteroid-AB7591[MO]-Bravo",
+                        "type": "Asteroid",
+                        "resources": []
+                    },
+                    {
+                        "name": "Asteroid-AB7591[MO]-Charlie",
+                        "type": "Asteroid",
+                        "resources": []
+                    }
+                ]
+            },
+            {
+                "name": "AB7810[SP]",
+                "type": "Asteroid Belt",
+                "yield": "Sparse",
+                "children": [
+                    {
+                        "name": "Asteroid-AB7810[SP]-Alpha",
+                        "type": "Asteroid",
+                        "resources": []
+                    },
+                    {
+                        "name": "Asteroid-AB7810[SP]-Bravo",
+                        "type": "Asteroid",
+                        "resources": []
+                    },
+                    {
+                        "name": "Asteroid-AB7810[SP]-Charlie",
+                        "type": "Asteroid",
+                        "resources": []
+                    }
+                ]
+            }
+        ]
+    },
+    "game_started": "2025-02-20",
+    "last_updated": "2025-02-20"
+}

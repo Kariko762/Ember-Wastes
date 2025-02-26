@@ -1,0 +1,39 @@
+{
+    "siphoning": {
+        "Man-Made": {
+            "minEnergy": 5,
+            "scanCost": 2,
+            "successChance": 30,
+            "dockCost": 2,
+            "dockChance": 50,
+            "dockPenalty": 0.8,
+            "dockFailEnergyLoss": 2,
+            "dockFailHullLoss": 2,
+            "siphonCost": 1,
+            "energyYield": {
+                "Secure Space": 0.5,
+                "Moderately Secure Space": 0.6,
+                "Risky Space": 0.7,
+                "Unsecure Space": 0.8
+            }
+        }
+    },
+    "wreckSalvage": {
+        "Unknown": {
+            "minEnergy": 5,
+            "successChance": 50,
+            "dockCost": 2,
+            "dockChance": 60,
+            "dockPenalty": 0.8,
+            "dockFailEnergyLoss": 2,
+            "dockFailHullLoss": 2,
+            "siphonCost": 1,
+            "energyYield": {
+                "Secure Space": 0.4,
+                "Moderately Secure Space": 0.5,
+                "Risky Space": 0.6,
+                "Unsecure Space": 0.7
+            }
+        }
+    }
+}
