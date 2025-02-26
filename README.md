@@ -11,7 +11,7 @@
 - **Persistent Progress:** Save and load your game state, preserving inventory, ship condition, and explored systems.
 - **Modular Design:** Built with an additive, function-based architecture—new features slot in as standalone files with minimal integration.
 
-## How It Works
+## How It Works/Will Work
 - Start at your **Home** base, where you repair, craft, and manage inventory.
 - Travel to **new systems** (25 energy cost), risking combat encounters based on security status (e.g., 0.0 = 100% chance).
 - **Explore** systems (10 energy) to reveal details, **scavenge** for loot, or **fight** enemies like Pirate Scouts.
