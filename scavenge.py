@@ -6,6 +6,7 @@ import time
 from text_style import TextStyle
 #import systems.systemsCreateAsteroids
 import scavenge_energy_siphon as energy_siphon
+import combat.combat_trigger as combat_trigger
 
 def roll_percentile():
     tens = random.randint(0, 9)
@@ -193,6 +194,7 @@ def scavenge_location(current_system, player_data, ship_inventory):
                     TextStyle.print_class("Information", f"Total Energy Used: {energy_cost}")
                     obj["scavenged"] = True
                     input("Press Enter to continue...")
+                    combat_trigger.combatCheck(player_data, current_system, "main_game_loop")
                     return
             
             TextStyle.print_class("Information", "- - -")
@@ -233,6 +235,7 @@ def scavenge_location(current_system, player_data, ship_inventory):
             
             obj["scavenged"] = True
             input("Press Enter to continue...")
+            combat_trigger.combatCheck(player_data, current_system, "main_game_loop")
     except ValueError:
         TextStyle.print_class("Warning_Mode_Line", "Invalid choice! Please enter a number.")
         input("Press Enter to continue...")

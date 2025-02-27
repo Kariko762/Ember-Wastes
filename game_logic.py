@@ -2,6 +2,7 @@
 import save_game
 import ships.shipsNewShip as ships
 import combat.combat_main as combat
+import combat.combat_trigger as combat_trigger
 import os
 import json
 import random
