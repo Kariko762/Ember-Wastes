@@ -2,11 +2,356 @@
     "fabricationVariables": {
         "energyCells": {
             "conversionRatio": 10,
-            "successChance": 30
+            "successChance": 30,
+            "desc": "Convert scavenged energy cells into usable ship energy."
         },
         "powerCells": {
             "conversionRatio": 25,
-            "successChance": 50
+            "successChance": 50,
+            "desc": "Process power cells into a higher energy yield."
+        },
+        "failurePenalty": {
+            "energyLoss": 1,
+            "materialLossChance": 20
+        }
+    },
+    "recipes": {
+        "tier1_raw": {
+            "iron": {
+                "inputs": {"Iron Ore": 10},
+                "outputs": {"Iron": 5},
+                "energyCost": 2,
+                "successChance": 90,
+                "desc": "Refine Iron Ore into usable Iron."
+            },
+            "copper": {
+                "inputs": {"Copper Ore": 10},
+                "outputs": {"Copper": 5},
+                "energyCost": 2,
+                "successChance": 90,
+                "desc": "Refine Copper Ore into Copper."
+            },
+            "titanium": {
+                "inputs": {"Titanium Ore": 10},
+                "outputs": {"Titanium": 5},
+                "energyCost": 3,
+                "successChance": 85,
+                "desc": "Refine Titanium Ore into Titanium."
+            },
+            "aluminum": {
+                "inputs": {"Aluminum Ore": 10},
+                "outputs": {"Aluminum": 5},
+                "energyCost": 2,
+                "successChance": 90,
+                "desc": "Refine Aluminum Ore into Aluminum."
+            },
+            "nickel": {
+                "inputs": {"Nickel Ore": 10},
+                "outputs": {"Nickel": 5},
+                "energyCost": 3,
+                "successChance": 85,
+                "desc": "Refine Nickel Ore into Nickel."
+            },
+            "fibre_bundle": {
+                "inputs": {"Plant Fibres": 15},
+                "outputs": {"Fibre Bundle": 5},
+                "energyCost": 1,
+                "successChance": 95,
+                "desc": "Bundle Plant Fibres into Fibre Bundles."
+            },
+            "biofuel": {
+                "inputs": {"Biofuel Sludge": 10},
+                "outputs": {"Biofuel": 5},
+                "energyCost": 2,
+                "successChance": 90,
+                "desc": "Process Biofuel Sludge into Biofuel."
+            },
+            "silicon": {
+                "inputs": {"Silicon Dioxide": 10},
+                "outputs": {"Silicon": 5},
+                "energyCost": 2,
+                "successChance": 90,
+                "desc": "Extract Silicon from Silicon Dioxide."
+            },
+            "sulfur_powder": {
+                "inputs": {"Sulfur": 10},
+                "outputs": {"Sulfur Powder": 5},
+                "energyCost": 1,
+                "successChance": 95,
+                "desc": "Grind Sulfur into Sulfur Powder."
+            },
+            "carbon_powder": {
+                "inputs": {"Coal": 10},
+                "outputs": {"Carbon Powder": 5},
+                "energyCost": 2,
+                "successChance": 90,
+                "desc": "Pulverize Coal into Carbon Powder."
+            },
+            "resin_gel": {
+                "inputs": {"Organic Resin": 10},
+                "outputs": {"Resin Gel": 5},
+                "energyCost": 2,
+                "successChance": 90,
+                "desc": "Process Organic Resin into Resin Gel."
+            },
+            "calcium_carbonate": {
+                "inputs": {"Limestone": 10},
+                "outputs": {"Calcium Carbonate": 5},
+                "energyCost": 2,
+                "successChance": 90,
+                "desc": "Extract Calcium Carbonate from Limestone."
+            }
+        },
+        "tier2_components": {
+            "steel": {
+                "inputs": {"Iron": 10},
+                "outputs": {"Steel": 5},
+                "energyCost": 3,
+                "successChance": 85,
+                "desc": "Forge Iron into Steel."
+            },
+            "bronze": {
+                "inputs": {"Copper": 10, "Sulfur Powder": 5},
+                "outputs": {"Bronze": 5},
+                "energyCost": 3,
+                "successChance": 85,
+                "desc": "Alloy Copper and Sulfur into Bronze."
+            },
+            "titanium_alloy": {
+                "inputs": {"Titanium": 10},
+                "outputs": {"Titanium Alloy": 5},
+                "energyCost": 4,
+                "successChance": 80,
+                "desc": "Strengthen Titanium into an Alloy."
+            },
+            "aluminum_alloy": {
+                "inputs": {"Aluminum": 10},
+                "outputs": {"Aluminum Alloy": 5},
+                "energyCost": 3,
+                "successChance": 85,
+                "desc": "Forge Aluminum into an Alloy."
+            },
+            "stainless_steel": {
+                "inputs": {"Nickel": 10, "Chromium Ore": 5},
+                "outputs": {"Stainless Steel": 5},
+                "energyCost": 4,
+                "successChance": 80,
+                "desc": "Alloy Nickel and Chromium into Stainless Steel."
+            },
+            "fabric_sheet": {
+                "inputs": {"Fibre Bundle": 10},
+                "outputs": {"Fabric Sheet": 5},
+                "energyCost": 2,
+                "successChance": 90,
+                "desc": "Weave Fibre Bundles into Fabric Sheets."
+            },
+            "bio_plastic": {
+                "inputs": {"Biofuel": 5, "Resin Gel": 5},
+                "outputs": {"Bio-Plastic": 3},
+                "energyCost": 3,
+                "successChance": 85,
+                "desc": "Combine Biofuel and Resin into Bio-Plastic."
+            },
+            "circuit_base": {
+                "inputs": {"Silicon": 5, "Copper": 5},
+                "outputs": {"Circuit Base": 2},
+                "energyCost": 4,
+                "successChance": 80,
+                "desc": "Craft a Circuit Base from Silicon and Copper."
+            },
+            "cast_iron": {
+                "inputs": {"Iron": 5, "Carbon Powder": 5},
+                "outputs": {"Cast Iron": 5},
+                "energyCost": 3,
+                "successChance": 85,
+                "desc": "Blend Iron and Carbon into Cast Iron."
+            },
+            "recycled_steel": {
+                "inputs": {"Scrap Metal": 10},
+                "outputs": {"Recycled Steel": 5},
+                "energyCost": 2,
+                "successChance": 90,
+                "desc": "Recycle Scrap Metal into Steel."
+            },
+            "quicklime": {
+                "inputs": {"Calcium Carbonate": 10},
+                "outputs": {"Quicklime": 5},
+                "energyCost": 3,
+                "successChance": 85,
+                "desc": "Heat Calcium Carbonate into Quicklime."
+            },
+            "gold_ingots": {
+                "inputs": {"Gold Ore": 5},
+                "outputs": {"Gold Ingots": 2},
+                "energyCost": 4,
+                "successChance": 80,
+                "desc": "Smelt Gold Ore into Gold Ingots."
+            },
+            "platinum_ingots": {
+                "inputs": {"Platinum Ore": 5},
+                "outputs": {"Platinum Ingots": 2},
+                "energyCost": 4,
+                "successChance": 80,
+                "desc": "Smelt Platinum Ore into Platinum Ingots."
+            }
+        },
+        "tier3_composites": {
+            "carbon_steel": {
+                "inputs": {"Steel": 10, "Fibre Bundle": 5},
+                "outputs": {"Carbon Steel": 5},
+                "energyCost": 5,
+                "successChance": 75,
+                "desc": "Reinforce Steel with Fibres into Carbon Steel."
+            },
+            "carbon_fibre": {
+                "inputs": {"Titanium Alloy": 10, "Fabric Sheet": 5},
+                "outputs": {"Carbon Fibre": 5},
+                "energyCost": 6,
+                "successChance": 70,
+                "desc": "Weave Titanium Alloy and Fabric into Carbon Fibre."
+            },
+            "durasteel": {
+                "inputs": {"Stainless Steel": 5, "Titanium": 5},
+                "outputs": {"Durasteel": 3},
+                "energyCost": 6,
+                "successChance": 70,
+                "desc": "Alloy Stainless Steel and Titanium into Durasteel."
+            },
+            "duralumin": {
+                "inputs": {"Aluminum Alloy": 10, "Magnesium": 5},
+                "outputs": {"Duralumin": 5},
+                "energyCost": 5,
+                "successChance": 75,
+                "desc": "Blend Aluminum Alloy and Magnesium into Duralumin."
+            },
+            "brass": {
+                "inputs": {"Bronze": 5, "Tin Ore": 5},
+                "outputs": {"Brass": 5},
+                "energyCost": 4,
+                "successChance": 80,
+                "desc": "Alloy Bronze and Tin into Brass."
+            },
+            "reinforced_plastic": {
+                "inputs": {"Bio-Plastic": 5, "Resin Gel": 5},
+                "outputs": {"Reinforced Plastic": 3},
+                "energyCost": 4,
+                "successChance": 80,
+                "desc": "Strengthen Bio-Plastic with Resin."
+            },
+            "microchip": {
+                "inputs": {"Circuit Base": 3, "Gold Ingots": 1},
+                "outputs": {"Microchip": 1},
+                "energyCost": 6,
+                "successChance": 70,
+                "desc": "Craft a Microchip with Circuit Base and Gold."
+            },
+            "invar": {
+                "inputs": {"Cast Iron": 10, "Nickel": 5},
+                "outputs": {"Invar": 5},
+                "energyCost": 5,
+                "successChance": 75,
+                "desc": "Alloy Cast Iron and Nickel into Invar."
+            },
+            "concrete": {
+                "inputs": {"Recycled Steel": 10, "Quicklime": 5},
+                "outputs": {"Concrete": 5},
+                "energyCost": 4,
+                "successChance": 80,
+                "desc": "Mix Recycled Steel and Quicklime into Concrete."
+            },
+            "platiniridium": {
+                "inputs": {"Platinum Ingots": 3, "Iridium Ore": 2},
+                "outputs": {"Platiniridium": 2},
+                "energyCost": 6,
+                "successChance": 70,
+                "desc": "Alloy Platinum and Iridium into Platiniridium."
+            },
+            "silicon_carbide": {
+                "inputs": {"Carbon Powder": 10, "Silicon": 5},
+                "outputs": {"Silicon Carbide": 5},
+                "energyCost": 5,
+                "successChance": 75,
+                "desc": "Fuse Carbon and Silicon into Silicon Carbide."
+            }
+        },
+        "tier4_ship_components": {
+            "hull_plating": {
+                "inputs": {"Carbon Steel": 5, "Power Cell": 1},
+                "outputs": {"Hull Plating": 1},
+                "energyCost": 8,
+                "successChance": 65,
+                "desc": "Forge Hull Plating for ship armor."
+            },
+            "scanner_mk1": {
+                "inputs": {"Carbon Fibre": 5, "Microchip": 1},
+                "outputs": {"Scanner Mk I": 1},
+                "energyCost": 10,
+                "successChance": 60,
+                "desc": "Build a basic Scanner for system intel."
+            },
+            "laser_cannon": {
+                "inputs": {"Durasteel": 5, "Circuit Base": 2},
+                "outputs": {"Laser Cannon": 1},
+                "energyCost": 12,
+                "successChance": 55,
+                "desc": "Construct a Laser Cannon for combat."
+            },
+            "stealth_coating": {
+                "inputs": {"Duralumin": 5, "Bio-Plastic": 3},
+                "outputs": {"Stealth Coating": 1},
+                "energyCost": 10,
+                "successChance": 60,
+                "desc": "Apply Stealth Coating for evasion."
+            },
+            "thruster_unit": {
+                "inputs": {"Stainless Steel": 5, "Fuel": 5},
+                "outputs": {"Thruster Unit": 1},
+                "energyCost": 9,
+                "successChance": 65,
+                "desc": "Build a Thruster Unit for speed."
+            },
+            "shield_generator": {
+                "inputs": {"Reinforced Plastic": 5, "Microchip": 1},
+                "outputs": {"Shield Generator": 1},
+                "energyCost": 11,
+                "successChance": 60,
+                "desc": "Craft a Shield Generator for defense."
+            },
+            "precision_sensor": {
+                "inputs": {"Invar": 5, "Platinum Ingots": 2},
+                "outputs": {"Precision Sensor": 1},
+                "energyCost": 12,
+                "successChance": 55,
+                "desc": "Assemble a Precision Sensor for detection."
+            },
+            "armored_plating": {
+                "inputs": {"Concrete": 10, "Durasteel": 3},
+                "outputs": {"Armored Plating": 1},
+                "energyCost": 10,
+                "successChance": 60,
+                "desc": "Forge heavy Armored Plating."
+            },
+            "railgun_barrel": {
+                "inputs": {"Silicon Carbide": 5, "Titanium Alloy": 5},
+                "outputs": {"Railgun Barrel": 1},
+                "energyCost": 13,
+                "successChance": 50,
+                "desc": "Construct a Railgun Barrel for heavy damage."
+            },
+            "quantum_relay": {
+                "inputs": {"Platiniridium": 2, "Nanites": 1},
+                "outputs": {"Quantum Relay": 1},
+                "energyCost": 15,
+                "successChance": 45,
+                "desc": "Build a Quantum Relay for comms."
+            },
+            "signal_booster": {
+                "inputs": {"Brass": 5, "Optical Fibre": 3},
+                "outputs": {"Signal Booster": 1},
+                "energyCost": 9,
+                "successChance": 65,
+                "desc": "Craft a Signal Booster for comms range."
+            }
         }
     }
 }
