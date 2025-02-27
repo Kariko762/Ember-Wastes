@@ -5,7 +5,7 @@
         "Warning_Mode_Line": {"color": "red", "bold": false, "delay_to_display": 0.1, "display_mode": "line"},
         "Success": {"color": "green", "bold": true, "delay_to_display": 0.2, "display_mode": "char", "char_delay": 0.02},
         "Success_Mode_Line": {"color": "green", "bold": true, "delay_to_display": 0.1, "display_mode": "line"},
-        "Energy": {"color": "cyan", "delay_to_display": 0, "display_mode": "instant"},
+        "Energy": {"color": "cyan", "bold": true, "delay_to_display": 0, "display_mode": "instant"},
         "Hull": {"color": "green", "delay_to_display": 0, "display_mode": "instant"},
         "Scavenged": {"color": "black", "delay_to_display": 0, "display_mode": "instant"}
     }

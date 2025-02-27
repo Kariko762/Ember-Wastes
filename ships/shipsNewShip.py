@@ -65,11 +65,12 @@ def create_ship(alignment=None):
     max_hull = hull
     max_shield = shield
     max_energy = energy
+    max_power = power  # Add max_power for consistency
     initiative_modifier = power // 10
     armor_class = random.randint(ship_class["armorClassRange"]["min"], ship_class["armorClassRange"]["max"])
     disengage = random.randint(ship_class["disengageRange"]["min"], ship_class["disengageRange"]["max"])
     
-    # Construct ship entity
+    # Construct ship entity with new slots
     ship = {
         "name": f"{align['name']} {ship_class['name']} {random.randint(1, 999)}" if align["name"] != "Player" else f"Player {ship_class['name']}",
         "class": ship_class["name"],
@@ -79,14 +80,26 @@ def create_ship(alignment=None):
         "shield": shield,
         "max_shield": max_shield,
         "power": power,
+        "max_power": max_power,
         "energy": energy,
         "max_energy": max_energy,
         "storage": storage,
+        "max_storage": storage,
         "level": level,
         "initiative_modifier": initiative_modifier,
         "armor_class": armor_class,
         "disengage": disengage,
-        "weapons": [{"name": weapon["name"], "damage": weapon["damage"]}]
+        "weapons": [{"name": weapon["name"], "damage": weapon["damage"]}],
+        "hardPoints": ship_class.get("hardPoints", 1),           # New: Weapon slots
+        "defensiveSlots": ship_class.get("defensiveSlots", 1),   # New: Defensive slots
+        "offensiveSlots": ship_class.get("offensiveSlots", 1),   # New: Offensive slots
+        "systemSlots": ship_class.get("systemSlots", 1),         # New: System slots
+        "powerSlots": ship_class.get("powerSlots", 1),           # New: Power slots
+        "equippedWeapons": [],                                   # New: List for equipped weapons
+        "defensiveComponents": [],                               # New: List for defensive components
+        "offensiveComponents": [],                               # New: List for offensive components
+        "systemComponents": [],                                  # New: List for system components
+        "powerComponents": []                                    # New: List for power components
     }
     
     # Display creation (optional, suppressed for player in main game)
@@ -94,9 +107,10 @@ def create_ship(alignment=None):
         TextStyle.print_class("Information", f"\nCreated NPC Ship: {ship['name']}")
         TextStyle.print_class("Information", f"Class: {ship['class']} | Alignment: {ship['alignment']}")
         TextStyle.print_class("Information", f"Hull: {ship['hull']}/{ship['max_hull']} | Shield: {ship['shield']}/{ship['max_shield']} | Energy: {ship['energy']}/{ship['max_energy']}")
-        TextStyle.print_class("Information", f"Power: {ship['power']} | Storage: {ship['storage']} | Level: {ship['level']}")
+        TextStyle.print_class("Information", f"Power: {ship['power']}/{ship['max_power']} | Storage: {ship['storage']} | Level: {ship['level']}")
         TextStyle.print_class("Information", f"Initiative Modifier: +{ship['initiative_modifier']} | Armor Class: {ship['armor_class']} | Disengage: {ship['disengage']}")
         TextStyle.print_class("Information", f"Weapon: {ship['weapons'][0]['name']} ({ship['weapons'][0]['damage']})")
+        TextStyle.print_class("Information", f"Slots: HardPoints: {ship['hardPoints']}, Defensive: {ship['defensiveSlots']}, Offensive: {ship['offensiveSlots']}, System: {ship['systemSlots']}, Power: {ship['powerSlots']}")
     
     return ship
 

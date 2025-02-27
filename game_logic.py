@@ -220,12 +220,12 @@ def travel_to_new_system(player_data, explored):
             TextStyle.print_class("Information", f"\nTraveled to a new system in {zone_name}. Energy consumed: {energy_cost}")
             TextStyle.print_class("Information", f"Universal Signature increased to {player_data['universal_signature']}")
             
-            encounter_chance = int((1 - security_zone) * player_data["universal_signature"])
-            roll, roll_str = roll_percentile()
-            if roll <= encounter_chance:
-                TextStyle.print_class("Warning", f"Encounter Roll {roll_str} ({roll}%): Hostile ship detected! (Chance {encounter_chance}%)")
-            else:
-                TextStyle.print_class("Information", f"Encounter Roll {roll_str} ({roll}%): No encounter. (Chance {encounter_chance}%)")
+            #encounter_chance = int((1 - security_zone) * player_data["universal_signature"])
+            #roll, roll_str = roll_percentile()
+            #if roll <= encounter_chance:
+            #    TextStyle.print_class("Warning", f"Encounter Roll {roll_str} ({roll}%): Hostile ship detected! (Chance {encounter_chance}%)")
+            #else:
+            #    TextStyle.print_class("Information", f"Encounter Roll {roll_str} ({roll}%): No encounter. (Chance {encounter_chance}%)")
             
             input("Press Enter to continue...")
             return explored

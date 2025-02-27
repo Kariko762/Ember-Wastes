@@ -50,7 +50,7 @@ def combatCheck(player_data, current_system, return_point):
     combat_chance = int((1 - security_zone) * universal_signature * config["combatChanceMultiplier"]) + base_chance
     roll, roll_str = roll_percentile()
     
-    TextStyle.print_class("Information", f"Combat Check {roll_str} ({roll}%): Chance {combat_chance}%")
+    #TextStyle.print_class("Information", f"Combat Check {roll_str} ({roll}%): Chance {combat_chance}%")
     if roll <= combat_chance:
         # Select NPC
         npcs = config["npcs"]
@@ -78,7 +78,7 @@ def combatCheck(player_data, current_system, return_point):
         TextStyle.print_class("Information", f"Combat resolved. Returning to {return_point}.")
         return True  # Combat occurred
     else:
-        TextStyle.print_class("Information", "No hostile encounter detected.")
+        #TextStyle.print_class("Information", "No hostile encounter detected.")
         return False  # No combat
 
 if __name__ == "__main__":

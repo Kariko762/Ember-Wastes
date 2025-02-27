@@ -4,6 +4,7 @@ import systems.systems as systems_module
 import fabrication.fabrication
 import ships.shipsNewShip as ships
 import combat.combat_main as combat
+import combat.combat_trigger as combat_trigger
 import os
 import json
 import random
@@ -54,7 +55,7 @@ def main_game_loop():
                         TextStyle.print_class("Warning", "\nInvalid choice! Please select 0-2.")
                         input("Press Enter to continue...")
             elif choice == "5":
-                fabrication_menu(player_data, ship_inventory)
+                fabrication_menu(player_data, ship_inventory, home_inventory)
             elif choice == "9":
                 if current_save_file:
                     save_game.save_game(ship_inventory, home_inventory, current_save_file, explored, current_system, player_data)
@@ -69,6 +70,7 @@ def main_game_loop():
                 input("Press Enter to continue...")
         
         else:
+            combat_trigger.combatCheck(player_data,current_system,"main_game_loop")
             display_game_menu(player_data, explored)
             choice = input("\nEnter your choice (1, 2, 3, 4, 5, 8, 9, 0): ")
             
@@ -81,7 +83,7 @@ def main_game_loop():
             elif choice == "4":
                 scavenge_location(current_system, player_data, ship_inventory)
             elif choice == "5":
-                fabrication_menu(player_data, ship_inventory)
+                fabrication_menu(player_data, ship_inventory, home_inventory)
             elif choice == "8":
                 explored = travel_home(explored, player_data, current_system)
             elif choice == "9":

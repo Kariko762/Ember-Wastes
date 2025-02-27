@@ -294,7 +294,8 @@
                 "outputs": {"Laser Cannon": 1},
                 "energyCost": 12,
                 "successChance": 55,
-                "desc": "Construct a Laser Cannon for combat."
+                "desc": "Construct a Laser Cannon for combat.",
+                "ammoType": "Power"
             },
             "stealth_coating": {
                 "inputs": {"Duralumin": 5, "Bio-Plastic": 3},
@@ -336,7 +337,8 @@
                 "outputs": {"Railgun Barrel": 1},
                 "energyCost": 13,
                 "successChance": 50,
-                "desc": "Construct a Railgun Barrel for heavy damage."
+                "desc": "Construct a Railgun Barrel for heavy damage.",
+                "ammoType": "Uranium Slugs"
             },
             "quantum_relay": {
                 "inputs": {"Platiniridium": 2, "Nanites": 1},
@@ -351,6 +353,86 @@
                 "energyCost": 9,
                 "successChance": 65,
                 "desc": "Craft a Signal Booster for comms range."
+            },
+            "plasma_cannon": {
+                "inputs": {"Durasteel": 5, "Microchip": 2},
+                "outputs": {"Plasma Cannon": 1},
+                "energyCost": 14,
+                "successChance": 50,
+                "desc": "Construct a Plasma Cannon for combat.",
+                "ammoType": "Power"
+            },
+            "ion_blaster": {
+                "inputs": {"Carbon Fibre": 5, "Circuit Base": 2},
+                "outputs": {"Ion Blaster": 1},
+                "energyCost": 13,
+                "successChance": 55,
+                "desc": "Construct an Ion Blaster for combat.",
+                "ammoType": "Power"
+            },
+            "particle_beam": {
+                "inputs": {"Platiniridium": 3, "Microchip": 2},
+                "outputs": {"Particle Beam": 1},
+                "energyCost": 15,
+                "successChance": 45,
+                "desc": "Construct a Particle Beam for combat.",
+                "ammoType": "Energy"
+            },
+            "missile_launcher": {
+                "inputs": {"Carbon Steel": 5, "Circuit Base": 2},
+                "outputs": {"Missile Launcher": 1},
+                "energyCost": 12,
+                "successChance": 60,
+                "desc": "Construct a Missile Launcher for combat.",
+                "ammoType": "Missiles"
+            },
+            "torpedo_launcher": {
+                "inputs": {"Durasteel": 5, "Silicon Carbide": 3},
+                "outputs": {"Torpedo Launcher": 1},
+                "energyCost": 14,
+                "successChance": 50,
+                "desc": "Construct a Torpedo Launcher for combat.",
+                "ammoType": "Torpedoes"
+            },
+            "railgun": {
+                "inputs": {"Titanium Alloy": 5, "Invar": 3},
+                "outputs": {"Railgun": 1},
+                "energyCost": 13,
+                "successChance": 55,
+                "desc": "Construct a Railgun for combat.",
+                "ammoType": "Uranium Slugs"
+            },
+            "heavy_railgun": {
+                "inputs": {"Silicon Carbide": 5, "Durasteel": 5},
+                "outputs": {"Heavy Railgun": 1},
+                "energyCost": 15,
+                "successChance": 45,
+                "desc": "Construct a Heavy Railgun for combat.",
+                "ammoType": "Uranium Slugs"
+            },
+            "missiles": {
+                "inputs": {"Steel": 5, "Sulfur Powder": 3},
+                "outputs": {"Missiles": 10},
+                "energyCost": 8,
+                "successChance": 70,
+                "desc": "Fabricate Missiles for Missile Launchers.",
+                "ammoType": "Missiles"
+            },
+            "torpedoes": {
+                "inputs": {"Carbon Steel": 5, "Biofuel": 3},
+                "outputs": {"Torpedoes": 5},
+                "energyCost": 10,
+                "successChance": 65,
+                "desc": "Fabricate Torpedoes for Torpedo Launchers.",
+                "ammoType": "Torpedoes"
+            },
+            "uranium_slugs": {
+                "inputs": {"Titanium Alloy": 5, "Uranium Ore": 2},
+                "outputs": {"Uranium Slugs": 10},
+                "energyCost": 9,
+                "successChance": 70,
+                "desc": "Fabricate Uranium Slugs for Railguns.",
+                "ammoType": "Uranium Slugs"
             }
         }
     }

@@ -9,15 +9,80 @@
     },
     "shipCustomization": {
         "classes": [
-            {"name": "Scout", "hullBonus": 0, "shieldBonus": 0, "powerBonus": 10, "energyBonus": 20, "storageBonus": 0, "armorClassRange": {"min": 10, "max": 13}, "disengageRange": {"min": 8, "max": 12}, "chance": 0.4},
-            {"name": "Fighter", "hullBonus": 10, "shieldBonus": 5, "powerBonus": 5, "energyBonus": 0, "storageBonus": -10, "armorClassRange": {"min": 13, "max": 16}, "disengageRange": {"min": 10, "max": 14}, "chance": 0.3},
-            {"name": "Freighter", "hullBonus": 15, "shieldBonus": 0, "powerBonus": -5, "energyBonus": 10, "storageBonus": 30, "armorClassRange": {"min": 11, "max": 14}, "disengageRange": {"min": 12, "max": 16}, "chance": 0.2},
-            {"name": "Cruiser", "hullBonus": 20, "shieldBonus": 10, "powerBonus": 0, "energyBonus": 0, "storageBonus": 0, "armorClassRange": {"min": 15, "max": 19}, "disengageRange": {"min": 14, "max": 18}, "chance": 0.1}
+            {
+                "name": "Scout",
+                "hullBonus": 0,
+                "shieldBonus": 0,
+                "powerBonus": 10,
+                "energyBonus": 20,
+                "storageBonus": 0,
+                "armorClassRange": {"min": 10, "max": 13},
+                "disengageRange": {"min": 8, "max": 12},
+                "chance": 0.4,
+                "hardPoints": 2,
+                "defensiveSlots": 1,
+                "offensiveSlots": 1,
+                "systemSlots": 2,
+                "powerSlots": 1
+            },
+            {
+                "name": "Fighter",
+                "hullBonus": 10,
+                "shieldBonus": 5,
+                "powerBonus": 5,
+                "energyBonus": 0,
+                "storageBonus": -10,
+                "armorClassRange": {"min": 13, "max": 16},
+                "disengageRange": {"min": 10, "max": 14},
+                "chance": 0.3,
+                "hardPoints": 4,
+                "defensiveSlots": 2,
+                "offensiveSlots": 2,
+                "systemSlots": 1,
+                "powerSlots": 1
+            },
+            {
+                "name": "Freighter",
+                "hullBonus": 15,
+                "shieldBonus": 0,
+                "powerBonus": -5,
+                "energyBonus": 10,
+                "storageBonus": 30,
+                "armorClassRange": {"min": 11, "max": 14},
+                "disengageRange": {"min": 12, "max": 16},
+                "chance": 0.2,
+                "hardPoints": 1,
+                "defensiveSlots": 2,
+                "offensiveSlots": 1,
+                "systemSlots": 2,
+                "powerSlots": 1
+            },
+            {
+                "name": "Cruiser",
+                "hullBonus": 20,
+                "shieldBonus": 10,
+                "powerBonus": 0,
+                "energyBonus": 0,
+                "storageBonus": 0,
+                "armorClassRange": {"min": 15, "max": 19},
+                "disengageRange": {"min": 14, "max": 18},
+                "chance": 0.1,
+                "hardPoints": 3,
+                "defensiveSlots": 3,
+                "offensiveSlots": 2,
+                "systemSlots": 1,
+                "powerSlots": 2
+            }
         ],
         "weapons": [
-            {"name": "Laser", "damage": "d8", "chance": 0.5},
-            {"name": "Plasma Cannon", "damage": "2d6", "chance": 0.3},
-            {"name": "Ion Blaster", "damage": "d10", "chance": 0.2}
+            {"name": "Laser", "damage": "d8", "ammoType": "Power", "chance": 0.25},
+            {"name": "Plasma Cannon", "damage": "2d6", "ammoType": "Power", "chance": 0.15},
+            {"name": "Ion Blaster", "damage": "d10", "ammoType": "Power", "chance": 0.15},
+            {"name": "Particle Beam", "damage": "d12", "ammoType": "Energy", "chance": 0.10},
+            {"name": "Missile Launcher", "damage": "2d8", "ammoType": "Missiles", "chance": 0.15},
+            {"name": "Torpedo Launcher", "damage": "3d6", "ammoType": "Torpedoes", "chance": 0.10},
+            {"name": "Railgun", "damage": "2d10", "ammoType": "Uranium Slugs", "chance": 0.10},
+            {"name": "Heavy Railgun", "damage": "2d12", "ammoType": "Uranium Slugs", "chance": 0.05}
         ],
         "alignments": [
             {"name": "Good", "chance": 0.6},
