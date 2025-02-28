@@ -18,6 +18,7 @@ from inventory import show_inventory, show_ship_inventory, transfer_items
 from drydock import repair_ship, fit_components, display_drydock_menu
 from scavenge import scavenge_location
 from fabrication.fabrication import fabrication_menu
+from vaults import vault_menu
 
 # Initialize global state
 ship_inventory = []
@@ -56,6 +57,8 @@ def main_game_loop():
                         input("Press Enter to continue...")
             elif choice == "5":
                 fabrication_menu(player_data, ship_inventory, home_inventory)
+            elif choice == "6":
+                vault_menu(player_data, ship_inventory, home_inventory)
             elif choice == "9":
                 if current_save_file:
                     save_game.save_game(ship_inventory, home_inventory, current_save_file, explored, current_system, player_data)

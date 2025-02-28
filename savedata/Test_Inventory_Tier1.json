@@ -1,8 +1,8 @@
 {
     "player": {
-        "location": "Home",
-        "energy": 354,
-        "universal_signature": 0,
+        "location": "Blue Giant System",
+        "energy": 294,
+        "universal_signature": 20,
         "name": "Player Fighter",
         "class": "Fighter",
         "alignment": "Player",
@@ -17,8 +17,13 @@
         "initiative_modifier": 4,
         "armor_class": 16,
         "disengage": 10,
-        "weapons": [{"name": "Laser", "damage": "d8"}],
-        "security_zone": 0.3,
+        "weapons": [
+            {
+                "name": "Laser",
+                "damage": "d8"
+            }
+        ],
+        "security_zone": 0.9,
         "max_power": 100,
         "max_storage": 50,
         "damage": 10,
@@ -34,30 +39,194 @@
         "systemComponents": [],
         "powerComponents": []
     },
-    "shipInventory": [],
-    "homeInventory": [
-    {"name": "Iron Ore", "quantity": 50},
-    {"name": "Copper Ore", "quantity": 50},
-    {"name": "Titanium Ore", "quantity": 50},
-    {"name": "Aluminum Ore", "quantity": 50},
-    {"name": "Nickel Ore", "quantity": 50},
-    {"name": "Plant Fibres", "quantity": 50},
-    {"name": "Biofuel Sludge", "quantity": 50},
-    {"name": "Silicon Dioxide", "quantity": 50},
-    {"name": "Sulfur", "quantity": 50},
-    {"name": "Coal", "quantity": 50},
-    {"name": "Organic Resin", "quantity": 50},
-    {"name": "Limestone", "quantity": 50},
-    {"name": "Chromium Ore", "quantity": 50},
-    {"name": "Gold Ore", "quantity": 50},
-    {"name": "Platinum Ore", "quantity": 50},
-    {"name": "Magnesium", "quantity": 50},
-    {"name": "Tin Ore", "quantity": 50},
-    {"name": "Iridium Ore", "quantity": 50},
-    {"name": "Uranium Ore", "quantity": 50}
+    "shipInventory": [
+        {
+            "name": "Copper Ore",
+            "quantity": 5
+        },
+        {
+            "name":"Small Basic Vault",
+            "type":"vault",
+            "quantity": 10
+        }
     ],
-    "explored": false,
-    "current_system": {},
+    "homeInventory": [
+        {
+            "name": "Iron Ore",
+            "quantity": 50
+        },
+        {
+            "name": "Copper Ore",
+            "quantity": 50
+        },
+        {
+            "name": "Titanium Ore",
+            "quantity": 50
+        },
+        {
+            "name": "Aluminum Ore",
+            "quantity": 50
+        },
+        {
+            "name": "Nickel Ore",
+            "quantity": 50
+        },
+        {
+            "name": "Plant Fibres",
+            "quantity": 50
+        },
+        {
+            "name": "Biofuel Sludge",
+            "quantity": 50
+        },
+        {
+            "name": "Silicon Dioxide",
+            "quantity": 50
+        },
+        {
+            "name": "Sulfur",
+            "quantity": 50
+        },
+        {
+            "name": "Coal",
+            "quantity": 50
+        },
+        {
+            "name": "Organic Resin",
+            "quantity": 50
+        },
+        {
+            "name": "Limestone",
+            "quantity": 50
+        },
+        {
+            "name": "Chromium Ore",
+            "quantity": 50
+        },
+        {
+            "name": "Gold Ore",
+            "quantity": 50
+        },
+        {
+            "name": "Platinum Ore",
+            "quantity": 50
+        },
+        {
+            "name": "Magnesium",
+            "quantity": 50
+        },
+        {
+            "name": "Tin Ore",
+            "quantity": 50
+        },
+        {
+            "name": "Iridium Ore",
+            "quantity": 50
+        },
+        {
+            "name": "Uranium Ore",
+            "quantity": 50
+        }
+    ],
+    "explored": true,
+    "current_system": {
+        "star": "Blue Giant",
+        "system_id": "SYS3089",
+        "children": [
+            {
+                "type": "Planet",
+                "name": "Gas Giant P-GG1389",
+                "children": [
+                    {
+                        "type": "Man-Made",
+                        "name": "Moon Outpost P-GG1389[MO]"
+                    },
+                    {
+                        "type": "Man-Made",
+                        "name": "Orbital Platform P-GG1389[OP]"
+                    }
+                ]
+            },
+            {
+                "name": "AB2826[MO]",
+                "type": "Asteroid Belt",
+                "yield": "Moderate",
+                "children": [
+                    {
+                        "name": "Asteroid-AB2826[MO]-Alpha",
+                        "type": "Asteroid",
+                        "resources": []
+                    },
+                    {
+                        "name": "Asteroid-AB2826[MO]-Bravo",
+                        "type": "Asteroid",
+                        "resources": []
+                    },
+                    {
+                        "name": "Asteroid-AB2826[MO]-Charlie",
+                        "type": "Asteroid",
+                        "resources": []
+                    }
+                ]
+            },
+            {
+                "name": "AB6242[BA]",
+                "type": "Asteroid Belt",
+                "yield": "Barren",
+                "children": [
+                    {
+                        "name": "Asteroid-AB6242[BA]-Alpha",
+                        "type": "Asteroid",
+                        "resources": []
+                    }
+                ]
+            },
+            {
+                "name": "AB4206[SP]",
+                "type": "Asteroid Belt",
+                "yield": "Sparse",
+                "children": [
+                    {
+                        "name": "Asteroid-AB4206[SP]-Alpha",
+                        "type": "Asteroid",
+                        "resources": []
+                    },
+                    {
+                        "name": "Asteroid-AB4206[SP]-Bravo",
+                        "type": "Asteroid",
+                        "resources": []
+                    },
+                    {
+                        "name": "Asteroid-AB4206[SP]-Charlie",
+                        "type": "Asteroid",
+                        "resources": []
+                    }
+                ]
+            },
+            {
+                "name": "AB8773[RI]",
+                "type": "Asteroid Belt",
+                "yield": "Rich",
+                "children": [
+                    {
+                        "name": "Asteroid-AB8773[RI]-Alpha",
+                        "type": "Asteroid",
+                        "resources": []
+                    },
+                    {
+                        "name": "Asteroid-AB8773[RI]-Bravo",
+                        "type": "Asteroid",
+                        "resources": []
+                    },
+                    {
+                        "name": "Asteroid-AB8773[RI]-Charlie",
+                        "type": "Asteroid",
+                        "resources": []
+                    }
+                ]
+            }
+        ]
+    },
     "game_started": "2025-02-20",
     "last_updated": "2025-02-20"
 }

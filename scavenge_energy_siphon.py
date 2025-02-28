@@ -121,7 +121,7 @@ def scavenge_energy(obj, player_data, ship_inventory):
                             return
                         player_data["energy"] -= siphon_cost
                         siphon_roll, siphon_str = roll_2d20()
-                        siphon_yield = int(siphon_roll * manmade_config["energyYield"][zone_key(security_zone)] * dock_penalty)
+                        siphon_yield = int(siphon_roll * dock_penalty)
                         TextStyle.print_class("Success", f"- Siphoning Energy from Facility (-{siphon_cost} Energy) {siphon_str} ({siphon_roll} * {dock_penalty} = {siphon_yield}): {siphon_yield} Energy Siphoned")
                         player_data["energy"] += siphon_yield
                     else:

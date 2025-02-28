@@ -1,125 +1,273 @@
 {
     "natural.planet": [
-        {"name": "Water", "chance": 0.10},
-        {"name": "Iron Ore", "chance": 0.08},
-        {"name": "Copper Ore", "chance": 0.07},
-        {"name": "Sulfur", "chance": 0.06},
-        {"name": "Volcanic Ash", "chance": 0.05},
-        {"name": "Clay", "chance": 0.05},
-        {"name": "Silicon Dioxide", "chance": 0.04},
-        {"name": "Aluminum Ore", "chance": 0.04},
-        {"name": "Limestone", "chance": 0.04},
-        {"name": "Magnesium Ore", "chance": 0.04},
-        {"name": "Coal", "chance": 0.03},
-        {"name": "Diamonds", "chance": 0.03},
-        {"name": "Gold Ore", "chance": 0.03},
-        {"name": "Silver Ore", "chance": 0.03},
-        {"name": "Uranium Ore", "chance": 0.02},
-        {"name": "Rare Earth Minerals", "chance": 0.02},
-        {"name": "Platinum Ore", "chance": 0.02},
-        {"name": "Emeralds", "chance": 0.01},
-        {"name": "Phosphorus", "chance": 0.04},
-        {"name": "Nickel Ore", "chance": 0.03},
-        {"name": "Zinc Ore", "chance": 0.03},
-        {"name": "Lead Ore", "chance": 0.03},
-        {"name": "Tin Ore", "chance": 0.03},
-        {"name": "Beryllium Ore", "chance": 0.02},
-        {"name": "Plant Fibres", "chance": 0.03},
-        {"name": "Organic Resin", "chance": 0.02},
-        {"name": "Graphite", "chance": 0.02},
-        {"name": "Obsidian", "chance": 0.01},
-        {"name": "Sapphires", "chance": 0.01},
-        {"name": "Rubies", "chance": 0.01}
+        {"name": "Iron Ore", "chance": 0.1},
+        {"name": "Copper Ore", "chance": 0.1},
+        {"name": "Titanium Ore", "chance": 0.08},
+        {"name": "Aluminum Ore", "chance": 0.08},
+        {"name": "Nickel Ore", "chance": 0.07},
+        {"name": "Plant Fibres", "chance": 0.1},
+        {"name": "Biofuel Sludge", "chance": 0.08},
+        {"name": "Silicon Dioxide", "chance": 0.07},
+        {"name": "Sulfur", "chance": 0.07},
+        {"name": "Coal", "chance": 0.07},
+        {"name": "Organic Resin", "chance": 0.06},
+        {"name": "Limestone", "chance": 0.06},
+        {"name": "Iron", "chance": 0.02},
+        {"name": "Copper", "chance": 0.02}
     ],
-    "natural.asteroid": [
-        {"name": "Iron Ore", "chance": 0.10},
-        {"name": "Nickel Ore", "chance": 0.08},
-        {"name": "Silicon Rock", "chance": 0.07},
-        {"name": "Copper Ore", "chance": 0.06},
-        {"name": "Cobalt Ore", "chance": 0.06},
-        {"name": "Magnesium Ore", "chance": 0.05},
-        {"name": "Aluminum Ore", "chance": 0.05},
-        {"name": "Chromium Ore", "chance": 0.04},
-        {"name": "Titanium Ore", "chance": 0.04},
-        {"name": "Platinum Ore", "chance": 0.03},
-        {"name": "Palladium Ore", "chance": 0.03},
-        {"name": "Gold Ore", "chance": 0.03},
-        {"name": "Iridium Ore", "chance": 0.03},
-        {"name": "Osmium Ore", "chance": 0.02},
-        {"name": "Rhodium Ore", "chance": 0.02},
-        {"name": "Tungsten Ore", "chance": 0.02},
-        {"name": "Molybdenum Ore", "chance": 0.02},
-        {"name": "Ruthenium Ore", "chance": 0.01},
-        {"name": "Carbon Chunks", "chance": 0.03},
-        {"name": "Lithium Ore", "chance": 0.03},
-        {"name": "Manganese Ore", "chance": 0.02},
-        {"name": "Vanadium Ore", "chance": 0.02},
-        {"name": "Zirconium Ore", "chance": 0.02},
-        {"name": "Frozen Water", "chance": 0.02},
-        {"name": "Helium-3", "chance": 0.01},
-        {"name": "Antimony Ore", "chance": 0.01},
-        {"name": "Bismuth Ore", "chance": 0.01},
-        {"name": "Tantalum Ore", "chance": 0.01},
-        {"name": "Rhenium Ore", "chance": 0.01}
+    "man-made": [
+        {"name": "Steel", "chance": 0.1},
+        {"name": "Bronze", "chance": 0.08},
+        {"name": "Titanium Alloy", "chance": 0.06},
+        {"name": "Aluminum Alloy", "chance": 0.06},
+        {"name": "Stainless Steel", "chance": 0.05},
+        {"name": "Fabric Sheet", "chance": 0.05},
+        {"name": "Bio-Plastic", "chance": 0.05},
+        {"name": "Circuit Base", "chance": 0.1},
+        {"name": "Cast Iron", "chance": 0.05},
+        {"name": "Recycled Steel", "chance": 0.05},
+        {"name": "Quicklime", "chance": 0.05},
+        {"name": "Gold Ingots", "chance": 0.04},
+        {"name": "Platinum Ingots", "chance": 0.04},
+        {"name": "Carbon Steel", "chance": 0.03},
+        {"name": "Microchip", "chance": 0.03},
+        {"name": "Hull Plating", "chance": 0.02},
+        {"name": "Laser Cannon", "chance": 0.01, "ammoType": "Power"},
+        {"name": "Power Cells", "chance": 0.13}
     ],
-    "natural.moon": [
-        {"name": "Silicon Rock", "chance": 0.09},
-        {"name": "Iron Ore", "chance": 0.08},
-        {"name": "Aluminum Ore", "chance": 0.07},
-        {"name": "Titanium Ore", "chance": 0.06},
-        {"name": "Magnesium Ore", "chance": 0.06},
-        {"name": "Calcium Ore", "chance": 0.05},
-        {"name": "Sodium Ore", "chance": 0.05},
-        {"name": "Potassium Ore", "chance": 0.04},
-        {"name": "Basalt", "chance": 0.04},
-        {"name": "Helium-3", "chance": 0.04},
-        {"name": "Chromium Ore", "chance": 0.03},
-        {"name": "Platinum Ore", "chance": 0.03},
-        {"name": "Gold Ore", "chance": 0.03},
-        {"name": "Silver Ore", "chance": 0.03},
-        {"name": "Uranium Ore", "chance": 0.02},
-        {"name": "Thorium Ore", "chance": 0.02},
-        {"name": "Zirconium Ore", "chance": 0.02},
-        {"name": "Hafnium Ore", "chance": 0.01},
-        {"name": "Phosphorus", "chance": 0.03},
-        {"name": "Nickel Ore", "chance": 0.03},
-        {"name": "Cobalt Ore", "chance": 0.02},
-        {"name": "Manganese Ore", "chance": 0.02},
-        {"name": "Lithium Ore", "chance": 0.02},
-        {"name": "Regolith Dust", "chance": 0.02},
-        {"name": "Ice Crystals", "chance": 0.02},
-        {"name": "Pyroxenes", "chance": 0.01},
-        {"name": "Feldspar", "chance": 0.01},
-        {"name": "Olivine", "chance": 0.01},
-        {"name": "Rare Earth Minerals", "chance": 0.01}
+    "wreckage": [
+        {"name": "Scrap Metal", "chance": 0.15},
+        {"name": "Iron Ore", "chance": 0.1},
+        {"name": "Copper Ore", "chance": 0.05},
+        {"name": "Circuit Base", "chance": 0.1},
+        {"name": "Recycled Steel", "chance": 0.05},
+        {"name": "Uranium Slugs", "chance": 0.1, "ammoType": "Uranium Slugs"},
+        {"name": "Missiles", "chance": 0.1, "ammoType": "Missiles"},
+        {"name": "Torpedoes", "chance": 0.08, "ammoType": "Torpedoes"},
+        {"name": "Railgun", "chance": 0.05, "ammoType": "Uranium Slugs"},
+        {"name": "Missile Launcher", "chance": 0.04, "ammoType": "Missiles"},
+        {"name": "Plasma Cannon", "chance": 0.03, "ammoType": "Power"},
+        {"name": "Microchip", "chance": 0.03},
+        {"name": "Power Cells", "chance": 0.12}
     ],
-    "synthetic": [
-        {"name": "Scrap Metal", "chance": 0.20},
-        {"name": "Circuit Board", "chance": 0.15},
-        {"name": "Power Cell", "chance": 0.12},
-        {"name": "Plasma Conduit", "chance": 0.08},
-        {"name": "Polymer Scrap", "chance": 0.10},
-        {"name": "Optical Fibre", "chance": 0.08},
-        {"name": "Coolant Fluid", "chance": 0.07},
-        {"name": "Nanites", "chance": 0.05},
-        {"name": "Quantum Chip", "chance": 0.04},
-        {"name": "Fuel Canister", "chance": 0.06},
-        {"name": "Servo Motor", "chance": 0.03},
-        {"name": "Heat Sink", "chance": 0.02},
-        {"name": "Memory Core", "chance": 0.01}
+    "asteroid": [
+        {"name": "Iron Ore", "chance": 0.2},
+        {"name": "Titanium Ore", "chance": 0.15},
+        {"name": "Aluminum Ore", "chance": 0.15},
+        {"name": "Nickel Ore", "chance": 0.1},
+        {"name": "Silicon Dioxide", "chance": 0.1},
+        {"name": "Coal", "chance": 0.08},
+        {"name": "Gold Ore", "chance": 0.05},
+        {"name": "Platinum Ore", "chance": 0.05},
+        {"name": "Uranium Ore", "chance": 0.05},
+        {"name": "Iron", "chance": 0.02}
     ],
-    "organic": [
-        {"name": "Plant Fibres", "chance": 0.20},
-        {"name": "Organic Resin", "chance": 0.15},
-        {"name": "Biofuel Sludge", "chance": 0.12},
-        {"name": "Fungal Spores", "chance": 0.10},
-        {"name": "Algae Biomass", "chance": 0.08},
-        {"name": "Chitin Fragments", "chance": 0.07},
-        {"name": "Protein Strands", "chance": 0.06},
-        {"name": "Cellulose", "chance": 0.05},
-        {"name": "Lignin", "chance": 0.04},
-        {"name": "Keratin", "chance": 0.03},
-        {"name": "Enzymatic Fluid", "chance": 0.02},
-        {"name": "Biopolymer", "chance": 0.01}
-    ]
+"vaults": {
+        "Small Basic Vault": {
+            "size": "small",
+            "chance": 0.25,
+            "lootTable": [
+                {"name": "natural.planet", "weight": 1.0, "minItems": 1, "maxItems": 3, "minQty": 2, "maxQty": 5},
+                {"name": "asteroid", "weight": 0.5, "minItems": 1, "maxItems": 2, "minQty": 1, "maxQty": 3},
+                {"name": "wreckage", "weight": 0.3, "minItems": 0, "maxItems": 1, "minQty": 1, "maxQty": 2},
+                {"name": "man-made", "weight": 0.0, "minItems": 0, "maxItems": 0, "minQty": 0, "maxQty": 0}
+            ],
+            "setItems": [
+                {"name": "Power Cells", "weight": 0.8, "minQty": 1, "maxQty": 3}
+            ]
+        },
+        "Medium Basic Vault": {
+            "size": "medium",
+            "chance": 0.15,
+            "lootTable": [
+                {"name": "natural.planet", "weight": 1.0, "minItems": 2, "maxItems": 4, "minQty": 3, "maxQty": 8},
+                {"name": "asteroid", "weight": 0.7, "minItems": 1, "maxItems": 3, "minQty": 2, "maxQty": 5},
+                {"name": "wreckage", "weight": 0.4, "minItems": 1, "maxItems": 2, "minQty": 1, "maxQty": 3},
+                {"name": "man-made", "weight": 0.1, "minItems": 0, "maxItems": 1, "minQty": 1, "maxQty": 2}
+            ],
+            "setItems": [
+                {"name": "Power Cells", "weight": 0.9, "minQty": 2, "maxQty": 5}
+            ]
+        },
+        "Large Basic Vault": {
+            "size": "large",
+            "chance": 0.1,
+            "lootTable": [
+                {"name": "natural.planet", "weight": 1.0, "minItems": 3, "maxItems": 6, "minQty": 5, "maxQty": 15},
+                {"name": "asteroid", "weight": 0.8, "minItems": 2, "maxItems": 4, "minQty": 3, "maxQty": 10},
+                {"name": "wreckage", "weight": 0.5, "minItems": 1, "maxItems": 3, "minQty": 2, "maxQty": 7},
+                {"name": "man-made", "weight": 0.2, "minItems": 1, "maxItems": 2, "minQty": 1, "maxQty": 3}
+            ],
+            "setItems": [
+                {"name": "Power Cells", "weight": 1.0, "minQty": 3, "maxQty": 8}
+            ]
+        },
+        "Small Combat Vault": {
+            "size": "small",
+            "chance": 0.1,
+            "lootTable": [
+                {"name": "wreckage", "weight": 1.0, "minItems": 1, "maxItems": 3, "minQty": 3, "maxQty": 10},
+                {"name": "man-made", "weight": 0.5, "minItems": 0, "maxItems": 1, "minQty": 1, "maxQty": 3},
+                {"name": "natural.planet", "weight": 0.0, "minItems": 0, "maxItems": 0, "minQty": 0, "maxQty": 0},
+                {"name": "asteroid", "weight": 0.0, "minItems": 0, "maxItems": 0, "minQty": 0, "maxQty": 0}
+            ],
+            "setItems": [
+                {"name": "Missiles", "weight": 0.8, "minQty": 5, "maxQty": 10, "ammoType": "Missiles"}
+            ]
+        },
+        "Medium Combat Vault": {
+            "size": "medium",
+            "chance": 0.07,
+            "lootTable": [
+                {"name": "wreckage", "weight": 1.0, "minItems": 2, "maxItems": 4, "minQty": 5, "maxQty": 15},
+                {"name": "man-made", "weight": 0.6, "minItems": 1, "maxItems": 2, "minQty": 2, "maxQty": 5},
+                {"name": "natural.planet", "weight": 0.0, "minItems": 0, "maxItems": 0, "minQty": 0, "maxQty": 0},
+                {"name": "asteroid", "weight": 0.0, "minItems": 0, "maxItems": 0, "minQty": 0, "maxQty": 0}
+            ],
+            "setItems": [
+                {"name": "Uranium Slugs", "weight": 0.9, "minQty": 5, "maxQty": 15, "ammoType": "Uranium Slugs"},
+                {"name": "Railgun", "weight": 0.05, "minQty": 1, "maxQty": 1, "ammoType": "Uranium Slugs"}
+            ]
+        },
+        "Large Combat Vault": {
+            "size": "large",
+            "chance": 0.05,
+            "lootTable": [
+                {"name": "wreckage", "weight": 1.0, "minItems": 3, "maxItems": 6, "minQty": 10, "maxQty": 20},
+                {"name": "man-made", "weight": 0.7, "minItems": 1, "maxItems": 3, "minQty": 3, "maxQty": 7},
+                {"name": "natural.planet", "weight": 0.0, "minItems": 0, "maxItems": 0, "minQty": 0, "maxQty": 0},
+                {"name": "asteroid", "weight": 0.0, "minItems": 0, "maxItems": 0, "minQty": 0, "maxQty": 0}
+            ],
+            "setItems": [
+                {"name": "Torpedoes", "weight": 1.0, "minQty": 10, "maxQty": 20, "ammoType": "Torpedoes"},
+                {"name": "Missile Launcher", "weight": 0.1, "minQty": 1, "maxQty": 1, "ammoType": "Missiles"}
+            ]
+        },
+        "System Utility Vault": {
+            "size": "medium",
+            "chance": 0.08,
+            "lootTable": [
+                {"name": "man-made", "weight": 1.0, "minItems": 2, "maxItems": 4, "minQty": 2, "maxQty": 5},
+                {"name": "wreckage", "weight": 0.5, "minItems": 1, "maxItems": 2, "minQty": 1, "maxQty": 3},
+                {"name": "natural.planet", "weight": 0.0, "minItems": 0, "maxItems": 0, "minQty": 0, "maxQty": 0},
+                {"name": "asteroid", "weight": 0.0, "minItems": 0, "maxItems": 0, "minQty": 0, "maxQty": 0}
+            ],
+            "setItems": [
+                {"name": "Power Cells", "weight": 1.0, "minQty": 3, "maxQty": 8},
+                {"name": "Scanner Mk I", "weight": 0.2, "minQty": 1, "maxQty": 1}
+            ]
+        },
+        "Faction Vault - Crimson Enclave": {
+            "size": "large",
+            "chance": 0.03,
+            "lootTable": [
+                {"name": "man-made", "weight": 1.0, "minItems": 2, "maxItems": 5, "minQty": 5, "maxQty": 10},
+                {"name": "wreckage", "weight": 0.8, "minItems": 1, "maxItems": 3, "minQty": 3, "maxQty": 7},
+                {"name": "natural.planet", "weight": 0.0, "minItems": 0, "maxItems": 0, "minQty": 0, "maxQty": 0},
+                {"name": "asteroid", "weight": 0.0, "minItems": 0, "maxItems": 0, "minQty": 0, "maxQty": 0}
+            ],
+            "setItems": [
+                {"name": "Crimson Plasma Cannon", "weight": 0.5, "minQty": 1, "maxQty": 1, "ammoType": "Power", "special": {"damage": "3d8"}},
+                {"name": "Titanium Alloy", "weight": 1.0, "minQty": 5, "maxQty": 10}
+            ]
+        },
+        "Faction Vault - Void Syndicate": {
+            "size": "large",
+            "chance": 0.03,
+            "lootTable": [
+                {"name": "wreckage", "weight": 1.0, "minItems": 2, "maxItems": 5, "minQty": 5, "maxQty": 10},
+                {"name": "man-made", "weight": 0.7, "minItems": 1, "maxItems": 3, "minQty": 3, "maxQty": 7},
+                {"name": "natural.planet", "weight": 0.0, "minItems": 0, "maxItems": 0, "minQty": 0, "maxQty": 0},
+                {"name": "asteroid", "weight": 0.0, "minItems": 0, "maxItems": 0, "minQty": 0, "maxQty": 0}
+            ],
+            "setItems": [
+                {"name": "Void Stealth Coating", "weight": 0.5, "minQty": 1, "maxQty": 1, "special": {"stealth": "+10"}},
+                {"name": "Uranium Slugs", "weight": 1.0, "minQty": 10, "maxQty": 20, "ammoType": "Uranium Slugs"}
+            ]
+        },
+        "Faction Vault - Iron Collective": {
+            "size": "large",
+            "chance": 0.03,
+            "lootTable": [
+                {"name": "asteroid", "weight": 1.0, "minItems": 2, "maxItems": 5, "minQty": 5, "maxQty": 15},
+                {"name": "man-made", "weight": 0.6, "minItems": 1, "maxItems": 3, "minQty": 3, "maxQty": 7},
+                {"name": "wreckage", "weight": 0.0, "minItems": 0, "maxItems": 0, "minQty": 0, "maxQty": 0},
+                {"name": "natural.planet", "weight": 0.0, "minItems": 0, "maxItems": 0, "minQty": 0, "maxQty": 0}
+            ],
+            "setItems": [
+                {"name": "Ironclad Hull Plating", "weight": 0.5, "minQty": 1, "maxQty": 1, "special": {"hull_bonus": "+20"}},
+                {"name": "Steel", "weight": 1.0, "minQty": 10, "maxQty": 20}
+            ]
+        },
+        "Special Tech Vault": {
+            "size": "medium",
+            "chance": 0.05,
+            "lootTable": [
+                {"name": "man-made", "weight": 1.0, "minItems": 2, "maxItems": 4, "minQty": 3, "maxQty": 8},
+                {"name": "wreckage", "weight": 0.5, "minItems": 1, "maxItems": 2, "minQty": 2, "maxQty": 5},
+                {"name": "natural.planet", "weight": 0.0, "minItems": 0, "maxItems": 0, "minQty": 0, "maxQty": 0},
+                {"name": "asteroid", "weight": 0.0, "minItems": 0, "maxItems": 0, "minQty": 0, "maxQty": 0}
+            ],
+            "setItems": [
+                {"name": "Quantum Relay", "weight": 0.3, "minQty": 1, "maxQty": 1},
+                {"name": "Microchip", "weight": 1.0, "minQty": 3, "maxQty": 6}
+            ]
+        },
+        "Special Resource Vault": {
+            "size": "large",
+            "chance": 0.04,
+            "lootTable": [
+                {"name": "asteroid", "weight": 1.0, "minItems": 3, "maxItems": 6, "minQty": 10, "maxQty": 20},
+                {"name": "natural.planet", "weight": 0.8, "minItems": 2, "maxItems": 4, "minQty": 5, "maxQty": 15},
+                {"name": "wreckage", "weight": 0.0, "minItems": 0, "maxItems": 0, "minQty": 0, "maxQty": 0},
+                {"name": "man-made", "weight": 0.0, "minItems": 0, "maxItems": 0, "minQty": 0, "maxQty": 0}
+            ],
+            "setItems": [
+                {"name": "Uranium Ore", "weight": 0.5, "minQty": 5, "maxQty": 15},
+                {"name": "Platinum Ore", "weight": 0.5, "minQty": 5, "maxQty": 15}
+            ]
+        },
+        "Alien Artifact Vault": {
+            "size": "medium",
+            "chance": 0.03,
+            "lootTable": [
+                {"name": "asteroid", "weight": 1.0, "minItems": 1, "maxItems": 3, "minQty": 3, "maxQty": 10},
+                {"name": "wreckage", "weight": 0.5, "minItems": 0, "maxItems": 2, "minQty": 2, "maxQty": 5},
+                {"name": "natural.planet", "weight": 0.0, "minItems": 0, "maxItems": 0, "minQty": 0, "maxQty": 0},
+                {"name": "man-made", "weight": 0.0, "minItems": 0, "maxItems": 0, "minQty": 0, "maxQty": 0}
+            ],
+            "setItems": [
+                {"name": "Alien Energy Core", "weight": 0.4, "minQty": 1, "maxQty": 1, "special": {"energy_bonus": "+50"}},
+                {"name": "Silicon Dioxide", "weight": 1.0, "minQty": 5, "maxQty": 15}
+            ]
+        },
+        "Alien Weapon Vault": {
+            "size": "large",
+            "chance": 0.02,
+            "lootTable": [
+                {"name": "wreckage", "weight": 1.0, "minItems": 2, "maxItems": 4, "minQty": 5, "maxQty": 10},
+                {"name": "man-made", "weight": 0.5, "minItems": 1, "maxItems": 2, "minQty": 3, "maxQty": 7},
+                {"name": "natural.planet", "weight": 0.0, "minItems": 0, "maxItems": 0, "minQty": 0, "maxQty": 0},
+                {"name": "asteroid", "weight": 0.0, "minItems": 0, "maxItems": 0, "minQty": 0, "maxQty": 0}
+            ],
+            "setItems": [
+                {"name": "Xeno Particle Beam", "weight": 0.3, "minQty": 1, "maxQty": 1, "ammoType": "Energy", "special": {"damage": "4d6"}},
+                {"name": "Uranium Slugs", "weight": 1.0, "minQty": 10, "maxQty": 20, "ammoType": "Uranium Slugs"}
+            ]
+        },
+        "Alien Relic Vault": {
+            "size": "large",
+            "chance": 0.02,
+            "lootTable": [
+                {"name": "asteroid", "weight": 1.0, "minItems": 2, "maxItems": 5, "minQty": 5, "maxQty": 15},
+                {"name": "wreckage", "weight": 0.6, "minItems": 1, "maxItems": 3, "minQty": 3, "maxQty": 8},
+                {"name": "natural.planet", "weight": 0.0, "minItems": 0, "maxItems": 0, "minQty": 0, "maxQty": 0},
+                {"name": "man-made", "weight": 0.0, "minItems": 0, "maxItems": 0, "minQty": 0, "maxQty": 0}
+            ],
+            "setItems": [
+                {"name": "Alien Stealth Module", "weight": 0.2, "minQty": 1, "maxQty": 1, "special": {"stealth": "+15"}},
+                {"name": "Gold Ore", "weight": 1.0, "minQty": 10, "maxQty": 20}
+            ]
+        }
+    }
 }

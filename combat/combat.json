@@ -1,10 +1,10 @@
 {
     "combatChanceMultiplier": 1.0,
     "securityZones": {
-        "Secure Space": {"min": 0.9, "max": 1.0, "baseChance": 10},
-        "Moderately Secure Space": {"min": 0.6, "max": 0.89, "baseChance": 20},
-        "Risky Space": {"min": 0.3, "max": 0.59, "baseChance": 30},
-        "Unsecure Space": {"min": 0.0, "max": 0.29, "baseChance": 40}
+        "Secure Space": {"min": 0.9, "max": 1.0, "baseChance": 5},
+        "Moderately Secure Space": {"min": 0.6, "max": 0.89, "baseChance": 9},
+        "Risky Space": {"min": 0.3, "max": 0.59, "baseChance": 13},
+        "Unsecure Space": {"min": 0.0, "max": 0.29, "baseChance": 20}
     },
     "npcs": [
         {"type": "Pirate", "chance": 0.5, "taunts": ["Prepare to be boarded, weakling!", "Your cargo is mine!"], "alignment": "Bad", "stats": {"hull": 50, "shield": 20, "energy": 50, "weapons": [{"name": "Laser", "damage": "d6"}]}},

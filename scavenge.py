@@ -7,6 +7,7 @@ from text_style import TextStyle
 #import systems.systemsCreateAsteroids
 import scavenge_energy_siphon as energy_siphon
 import combat.combat_trigger as combat_trigger
+import vaults
 
 def roll_percentile():
     tens = random.randint(0, 9)
@@ -33,6 +34,7 @@ def scavenge_items(num_items_to_find, location_type):
         
         item_names = [item["name"] for item in available_items]
         chances = [item["chance"] for item in available_items]
+        ammo_types = [item.get("ammoType") for item in available_items]
         cumulative = []
         running_total = 0
         for chance in chances:
@@ -44,9 +46,10 @@ def scavenge_items(num_items_to_find, location_type):
             for i, upper_bound in enumerate(cumulative):
                 if roll <= upper_bound:
                     item_name = item_names[i]
+                    ammo_type = ammo_types[i] if i < len(ammo_types) and ammo_types[i] else None
                     break
             quantity = random.randint(1, 3)
-            items.append((roll_str, roll, item_name, quantity))
+            items.append((roll_str, roll, item_name, quantity, ammo_type))
     except Exception as e:
         TextStyle.print_class("Warning_Mode_Line", f"Error scavenging items: {str(e)}")
     
@@ -145,9 +148,12 @@ def scavenge_location(current_system, player_data, ship_inventory):
                 return
             
             location_name = obj["name"]
+            # Updated location_type mapping to match new items.json
             location_type = "natural.planet" if obj["type"] == "Planet" else \
-                            "natural.asteroid" if obj["type"] == "Asteroid" else \
-                            "natural.moon" if obj["type"] == "Moon" else "synthetic"
+                            "asteroid" if obj["type"] == "Asteroid" else \
+                            "natural.planet" if obj["type"] == "Moon" else \
+                            "man-made" if obj["type"] == "Man-Made" else \
+                            "wreckage" if obj["type"] == "Unknown" else "natural.planet"  # Default to natural.planet
             
             TextStyle.print_class("Information", "- - -")
             time.sleep(0.3)
@@ -220,17 +226,24 @@ def scavenge_location(current_system, player_data, ship_inventory):
                 TextStyle.print_class("Information", f"Total Energy Used: {energy_cost}")
                 TextStyle.print_class("Information", f"Total Items Found: {total_items}")
                 item_counter = 1
-                for roll_str, roll, item_name, qty in found_items:
-                    TextStyle.print_class("Success_Mode_Line", f"- Item {item_counter} {roll_str} ({roll}%): {item_name} ({qty}) Discovered")
+                for roll_str, roll, item_name, qty, ammo_type in found_items:
+                    loot_entry = {"name": item_name, "quantity": qty}
+                    if ammo_type:
+                        loot_entry["ammoType"] = ammo_type
+                    display_str = f"- Item {item_counter} {roll_str} ({roll}%): {item_name} ({qty})"
+                    if ammo_type:
+                        display_str += f" (Ammo: {ammo_type})"
+                    TextStyle.print_class("Success_Mode_Line", display_str)
                     item_counter += 1
                     for inv_item in ship_inventory:
                         if inv_item["name"] == item_name:
                             inv_item["quantity"] += qty
                             break
                     else:
-                        ship_inventory.append({"name": item_name, "quantity": qty})
+                        ship_inventory.append(loot_entry)
             
             if obj["type"] == "Man-Made" or (obj["type"] == "Unknown" and "wreckage" in obj):
+                vaults.vaultCheck(player_data, ship_inventory)
                 energy_siphon.scavenge_energy(obj, player_data, ship_inventory)
             
             obj["scavenged"] = True
@@ -239,3 +252,14 @@ def scavenge_location(current_system, player_data, ship_inventory):
     except ValueError:
         TextStyle.print_class("Warning_Mode_Line", "Invalid choice! Please enter a number.")
         input("Press Enter to continue...")
+
+if __name__ == "__main__":
+    test_system = {
+        "children": [
+            {"name": "Rocky Planet", "type": "Planet", "children": [{"name": "Orbital Station", "type": "Man-Made"}]},
+            {"name": "Wreckage", "type": "Unknown", "wreckage": True}
+        ]
+    }
+    test_player = {"energy": 100, "universal_signature": 0, "security_zone": 0.3}
+    test_inventory = []
+    scavenge_location(test_system, test_player, test_inventory)

@@ -53,6 +53,7 @@ def display_home_menu(player_data):
     TextStyle.print_class("Information", "3) Transfer Items")
     TextStyle.print_class("Information", "4) Drydock")
     TextStyle.print_class("Information", "5) Fabrication")
+    TextStyle.print_class("Information", "6) Vaults")
     TextStyle.print_class("Information", "9) Save Game")
     TextStyle.print_class("Information", "0) Exit")
     TextStyle.print_class("Information", "================")
