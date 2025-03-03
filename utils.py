@@ -56,3 +56,16 @@ def load_general_data():
         TextStyle.print_class("Warning", "\nError: Invalid JSON format in general.json!")
         input("Press Enter to continue...")
         return None
+    
+ #Remove or decrement an item from inventory based on quantity.
+def inventoryRemove(inventory, item_to_remove):
+    """Remove or decrement an item from inventory based on quantity."""
+    for i, inv_item in enumerate(inventory):
+        if inv_item["name"] == item_to_remove["name"] and inv_item.get("type") == item_to_remove.get("type"):
+            qty = inv_item.get("quantity", 1)  # Default to 1 if no quantity
+            if qty > 1:
+                inv_item["quantity"] = qty - 1  # Decrement
+            else:
+                inventory.pop(i)  # Remove if qty would hit 0
+            return True
+    return False  # Item not found

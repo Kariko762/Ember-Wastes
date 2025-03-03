@@ -4,6 +4,7 @@ import random
 import os
 import time
 from text_style import TextStyle
+from utils import inventoryRemove
 
 def load_items():
     script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -29,7 +30,13 @@ def vaultCheck(player_data, ship_inventory):
         cumulative += vault_data["chance"]
         if roll <= cumulative:
             TextStyle.print_class("Success_Mode_Line", f"Found a {vault_name}!")
-            ship_inventory.append({"name": vault_name, "type": "vault"})
+            vault_entry = {"name": vault_name, "type": "vault", "quantity": 1}
+            for inv_item in ship_inventory:
+                if inv_item["name"] == vault_name and inv_item.get("type") == "vault":
+                    inv_item["quantity"] = inv_item.get("quantity", 1) + 1
+                    break
+            else:
+                ship_inventory.append(vault_entry)
             break
 
 def open_vault(vault, ship_inventory, home_inventory, location):
@@ -53,7 +60,6 @@ def open_vault(vault, ship_inventory, home_inventory, location):
     time.sleep(0.5)
     found_items = []
     
-    # Loot Table Logic
     for row in loot_table:
         if random.random() <= row["weight"]:
             items_count = random.randint(row["minItems"], row["maxItems"])
@@ -74,7 +80,6 @@ def open_vault(vault, ship_inventory, home_inventory, location):
                         found_items.append(loot_entry)
                         break
     
-    # Set Items Logic
     for set_item in set_items:
         if random.random() <= set_item["weight"]:
             qty = random.randint(set_item["minQty"], set_item["maxQty"])
@@ -105,35 +110,37 @@ def vault_menu(player_data, ship_inventory, home_inventory):
         TextStyle.print_class("Warning_Mode_Line", "Vaults can only be managed at Home!")
         return
     
-    vaults = [item for item in ship_inventory if item.get("type") == "vault"]
-    if not vaults:
-        TextStyle.print_class("Information", "\nNo vaults in ship inventory!")
-        input("Press Enter to continue...")
-        return
-    
     while True:
+        vaults = [item for item in ship_inventory if item.get("type") == "vault"]  # Refresh list each loop
+        if not vaults:
+            TextStyle.print_class("Information", "\nNo vaults in ship inventory!")
+            input("Press Enter to continue...")
+            return
+        
         TextStyle.print_class("Information", "\n=== Vault Menu ===")
         for i, vault in enumerate(vaults, 1):
-            TextStyle.print_class("Information", f"{i}) {vault['name']}")
-        TextStyle.print_class("Information", "0) Back")
+            qty = vault.get("quantity", 1)
+            TextStyle.print_class("Information", f"{i}) {vault['name']} (Qty: {qty})")
+        TextStyle.print_class("Information", "0) Exit")
         
+        choice_input = input("Select a vault to open (0-9): ").strip()
         try:
-            choice = int(input("Select a vault to open (0-9): "))
+            choice = int(choice_input)
             if choice == 0:
                 TextStyle.print_class("Information", "Exiting Vault Menu...")
-                break  # Break the loop to return to main menu
+                break
             if 1 <= choice <= len(vaults):
                 selected_vault = vaults[choice - 1]
                 if open_vault(selected_vault, ship_inventory, home_inventory, player_data["location"]):
-                    ship_inventory.remove(selected_vault)
-                input("Press Enter to continue...")
+                    inventoryRemove(ship_inventory, selected_vault)
             else:
                 TextStyle.print_class("Warning_Mode_Line", "Invalid selection!")
         except ValueError:
             TextStyle.print_class("Warning_Mode_Line", "Invalid input! Please enter a number.")
+        input("Press Enter to continue...")  # Moved outside try to always prompt
 
 if __name__ == "__main__":
     test_player = {"location": "Home", "energy": 100}
-    test_ship_inventory = [{"name": "Small Basic Vault", "type": "vault"}]
+    test_ship_inventory = [{"name": "Small Basic Vault", "type": "vault", "quantity": 1}]
     test_home_inventory = []
     vault_menu(test_player, test_ship_inventory, test_home_inventory)
