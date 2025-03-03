@@ -48,7 +48,63 @@
             "name":"Small Basic Vault",
             "type":"vault",
             "quantity": 10
+        },
+        {
+            "name":"Large Basic Vault",
+            "type":"vault",
+            "quantity": 3
+        },
+        {
+            "name":"Large Combat Vault",
+            "type":"vault",
+            "quantity": 10
+        },
+        {
+            "name":"System Utility Vault",
+            "type":"vault",
+            "quantity": 10
+        },
+        {
+            "name":"Faction Vault - Crimson Enclave",
+            "type":"vault",
+            "quantity": 10
+        },
+        {
+            "name":"Faction Vault - Void Syndicate",
+            "type":"vault",
+            "quantity": 10
+        },
+        {
+            "name":"Faction Vault - Iron Collective",
+            "type":"vault",
+            "quantity": 10
+        },
+        {
+            "name":"Special Tech Vault",
+            "type":"vault",
+            "quantity": 10
+        },
+        {
+            "name":"Special Resource Vault",
+            "type":"vault",
+            "quantity": 10
+        },
+        {
+            "name":"Alien Artifact Vault",
+            "type":"vault",
+            "quantity": 10
+        },
+        {
+            "name":"Alien Weapon Vault",
+            "type":"vault",
+            "quantity": 10
+        },
+        {
+            "name":"Alien Relic Vault",
+            "type":"vault",
+            "quantity": 10
         }
+        
     ],
     "homeInventory": [
         {
