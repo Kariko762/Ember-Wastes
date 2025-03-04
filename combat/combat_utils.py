@@ -7,17 +7,27 @@ def roll_d20():
     return roll, f"[d20({roll})]"
 
 def roll_damage(damage_die):
-    if damage_die == "d8":
-        roll = random.randint(1, 8)
-        return roll, f"[d8({roll})]"
-    elif damage_die == "2d6":
-        roll1 = random.randint(1, 6)
-        roll2 = random.randint(1, 6)
-        return roll1 + roll2, f"[d6({roll1}) + d6({roll2})]"
-    elif damage_die == "d10":
-        roll = random.randint(1, 10)
-        return roll, f"[d10({roll})]"
-    return 0, "[d0(0)]"
+    """Roll damage based on dice string (e.g., 'NdM' for N dice of M sides)."""
+    if not damage_die or not isinstance(damage_die, str):
+        return 0, "[d0(0)]"
+    
+    try:
+        # Parse NdM format (e.g., "3d6" -> 3 dice, 6 sides)
+        if "d" in damage_die:
+            num_dice, die_size = damage_die.split("d")
+            num_dice = int(num_dice) if num_dice else 1  # Default to 1 die if no number
+            die_size = int(die_size)
+        else:
+            # Handle plain numbers or invalid formats
+            return 0, "[d0(0)]"
+        
+        rolls = [random.randint(1, die_size) for _ in range(num_dice)]
+        total = sum(rolls)
+        roll_str = " + ".join(f"d{die_size}({roll})" for roll in rolls)
+        return total, f"[{roll_str}]"
+    except (ValueError, IndexError):
+        TextStyle.print_class("Warning", f"Invalid damage die format: {damage_die}")
+        return 0, "[d0(0)]"
 
 def calculate_initiative(ship):
     roll, roll_str = roll_d20()

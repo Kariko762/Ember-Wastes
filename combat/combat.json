@@ -7,8 +7,8 @@
         "Unsecure Space": {"min": 0.0, "max": 0.29, "baseChance": 20}
     },
     "npcs": [
-        {"type": "Pirate", "chance": 0.5, "taunts": ["Prepare to be boarded, weakling!", "Your cargo is mine!"], "alignment": "Bad", "stats": {"hull": 50, "shield": 20, "energy": 50, "weapons": [{"name": "Laser", "damage": "d6"}]}},
-        {"type": "Raider", "chance": 0.3, "taunts": ["No escape for you!", "Surrender or be dust!"], "alignment": "Bad", "stats": {"hull": 40, "shield": 25, "energy": 40, "weapons": [{"name": "Blaster", "damage": "d8"}]}},
-        {"type": "Mercenary", "chance": 0.2, "taunts": ["You’re worth more dead!", "This is just business!"], "alignment": "Bad", "stats": {"hull": 60, "shield": 30, "energy": 60, "weapons": [{"name": "Cannon", "damage": "d10"}]}}
+        {"type": "Pirate", "chance": 0.5, "taunts": ["Prepare to be boarded, weakling!", "Your cargo is mine!"], "alignment": "Bad", "stats": {"hull": 50, "shield": 20, "energy": 50, "equippedWeapons": [{"name": "Laser", "damage": "d6"}]}},
+        {"type": "Raider", "chance": 0.3, "taunts": ["No escape for you!", "Surrender or be dust!"], "alignment": "Bad", "stats": {"hull": 40, "shield": 25, "energy": 40, "equippedWeapons": [{"name": "Blaster", "damage": "d8"}]}},
+        {"type": "Mercenary", "chance": 0.2, "taunts": ["You’re worth more dead!", "This is just business!"], "alignment": "Bad", "stats": {"hull": 60, "shield": 30, "energy": 60, "equippedWeapons": [{"name": "Cannon", "damage": "d10"}]}}
     ]
 }
