@@ -5,7 +5,13 @@
         "powerRange": {"min": 10, "max": 50},
         "energyRange": {"min": 50, "max": 200},
         "storageRange": {"min": 20, "max": 100},
-        "levelRange": {"min": 1, "max": 5}
+        "levelRange": {"min": 1, "max": 5},
+        "weaponChancePerHardpoint": [
+            {"weapons": 1, "chance": 100},
+            {"weapons": 2, "chance": 75},
+            {"weapons": 3, "chance": 50},
+            {"weapons": 4, "chance": 25}
+        ]
     },
     "shipCustomization": {
         "classes": [
