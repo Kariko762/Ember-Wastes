@@ -125,7 +125,7 @@ def main():
                 player_data = loaded_player
                 main_game_loop()
         elif choice == "3":
-            experimental_menu(enemy_npc, player_data)
+            experimental_menu(enemy_npc, player_data, ship_inventory)
         elif choice == "9":
             TextStyle.print_class("Information", "\nGoodbye!")
             break

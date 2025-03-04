@@ -28,8 +28,27 @@ def display_create_ship_menu():
 def display_combat_menu():
     TextStyle.print_class("Information", "\n=== Combat Menu ===")
     TextStyle.print_class("Information", "1) Create Enemy NPC")
-    TextStyle.print_class("Information", "2) Initiate Combat")
+    TextStyle.print_class("Information", "2) Create Player")
+    TextStyle.print_class("Information", "3) Initiate Combat")
     TextStyle.print_class("Information", "0) Return to Experimental Menu")
+    TextStyle.print_class("Information", "================")
+
+def display_create_enemy_npc_menu():
+    TextStyle.print_class("Information", "\n=== Create Enemy NPC ===")
+    TextStyle.print_class("Information", "1) Scout")
+    TextStyle.print_class("Information", "2) Fighter")
+    TextStyle.print_class("Information", "3) Freighter")
+    TextStyle.print_class("Information", "4) Cruiser")
+    TextStyle.print_class("Information", "0) Return to Combat Menu")
+    TextStyle.print_class("Information", "================")
+
+def display_create_player_menu():
+    TextStyle.print_class("Information", "\n=== Create Player ===")
+    TextStyle.print_class("Information", "1) Scout")
+    TextStyle.print_class("Information", "2) Fighter")
+    TextStyle.print_class("Information", "3) Freighter")
+    TextStyle.print_class("Information", "4) Cruiser")
+    TextStyle.print_class("Information", "0) Return to Combat Menu")
     TextStyle.print_class("Information", "================")
 
 def display_game_menu(player_data, explored):

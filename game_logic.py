@@ -9,7 +9,7 @@ import random
 import time
 from text_style import TextStyle
 from utils import load_new_game_variables, load_space_classification, roll_percentile
-from menus import display_experimental_menu, display_create_ship_menu, display_combat_menu
+from menus import display_experimental_menu, display_create_ship_menu, display_combat_menu, display_create_enemy_npc_menu, display_create_player_menu
 
 def new_game(ship_inventory, home_inventory, current_save_file, explored, current_system, player_data):
     script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -24,7 +24,7 @@ def new_game(ship_inventory, home_inventory, current_save_file, explored, curren
     TextStyle.print_class("Information", "1) Easy")
     TextStyle.print_class("Information", "2) Medium")
     TextStyle.print_class("Information", "3) Hard")
-    difficulty_choice = input("Enter your choice (1-3): ")
+    difficulty_choice = input("Enter your choice (1-3): ").strip()
     
     difficulty_map = {"1": "easy", "2": "medium", "3": "hard"}
     if difficulty_choice not in difficulty_map:
@@ -50,24 +50,35 @@ def new_game(ship_inventory, home_inventory, current_save_file, explored, curren
             home_inventory[:] = variables["difficulty_levels"][difficulty]["startingHomeInventory"]
             explored = False
             current_system.clear()
+            
+            player_data.clear()
             player_data.update(ships.create_ship(alignment="Player"))
             player_data["location"] = "Home"
             player_data["universal_signature"] = 0
             player_data["security_zone"] = 1.0
+            
             game_data = {
                 "player": player_data,
                 "shipInventory": ship_inventory,
                 "homeInventory": home_inventory,
                 "explored": explored,
                 "current_system": current_system,
-                "game_started": "2025-02-20",
-                "last_updated": "2025-02-20"
+                "game_started": "2025-03-03",
+                "last_updated": "2025-03-03"
             }
             with open(save_file, 'w') as file:
                 json.dump(game_data, file, indent=4)
-            current_save_file = save_file
+            
+            if isinstance(current_save_file, list):
+                current_save_file.clear()
+                current_save_file.append(save_file)
+            elif isinstance(current_save_file, dict):
+                current_save_file["path"] = save_file
+            else:
+                current_save_file = save_file
+            
             TextStyle.print_class("Information", f"New game '{game_name}' created successfully on {difficulty.capitalize()} difficulty!")
-            return save_file
+            return current_save_file
 
 def load_game(ship_inventory, home_inventory, current_save_file, explored, current_system, player_data):
     script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -88,7 +99,7 @@ def load_game(ship_inventory, home_inventory, current_save_file, explored, curre
             last_updated = game_data.get("last_updated", "Unknown")
             TextStyle.print_class("Information", f"{i}) {save_file[:-5]} (Last Saved: {last_updated})")
     
-    choice = input("\nEnter the number of the game to load (or 0 to cancel): ")
+    choice = input("\nEnter the number of the game to load (or 0 to cancel): ").strip()
     if choice == "0":
         return False, explored, current_save_file, current_system, ship_inventory, home_inventory, player_data
     
@@ -103,27 +114,47 @@ def load_game(ship_inventory, home_inventory, current_save_file, explored, curre
                 explored = game_data.get("explored", False)
                 current_system.clear()
                 current_system.update(game_data.get("current_system", {}))
+                
+                player_data.clear()
                 player_data.update(game_data["player"])
-                player_data.setdefault("location", "Home")
-                player_data.setdefault("energy", 100)
-                player_data.setdefault("hull", 100)
-                player_data.setdefault("max_hull", 100)
-                player_data.setdefault("shield", 50)
-                player_data.setdefault("max_shield", 50)
-                player_data.setdefault("power", 100)
-                player_data.setdefault("max_power", 100)
-                player_data.setdefault("storage", 50)
-                player_data.setdefault("max_storage", 50)
-                player_data.setdefault("damage", 10)
-                player_data.setdefault("level", 1)
-                player_data.setdefault("ship_class", "Scout")
-                player_data.setdefault("max_energy", 100)
-                player_data.setdefault("universal_signature", 0)
-                player_data.setdefault("security_zone", 1.0)
-                player_data.setdefault("initiative_modifier", player_data.get("power", 100) // 10)
-                player_data.setdefault("armor_class", 10 + (player_data.get("hull", 100) // 10) + (player_data.get("shield", 50) // 10))
-                player_data.setdefault("disengage", 10)
-                player_data.setdefault("weapons", [{"name": "Laser", "damage": "d8"}])
+                
+                defaults = {
+                    "location": "Home",
+                    "energy": 100,
+                    "max_energy": 100,
+                    "hull": 100,
+                    "max_hull": 100,
+                    "shield": 50,
+                    "max_shield": 50,
+                    "power": 100,
+                    "max_power": 100,
+                    "storage": 50,
+                    "max_storage": 50,
+                    "level": 1,
+                    "universal_signature": 0,
+                    "security_zone": 1.0,
+                    "initiative_modifier": player_data.get("power", 100) // 10,
+                    "armor_class": 10 + (player_data.get("hull", 100) // 10) + (player_data.get("shield", 50) // 10),
+                    "disengage": 10,
+                    "hardPoints": 1,
+                    "defensiveSlots": 1,
+                    "offensiveSlots": 1,
+                    "systemSlots": 1,
+                    "powerSlots": 1,
+                    "equippedWeapons": [{"name": "Laser", "damage": "d8", "ammoType": "Power"}],
+                    "defensiveComponents": [],
+                    "offensiveComponents": [],
+                    "systemComponents": [],
+                    "powerComponents": []
+                }
+                for key, value in defaults.items():
+                    player_data.setdefault(key, value)
+                
+                if "weapons" in player_data:
+                    if not player_data["equippedWeapons"] and player_data["weapons"]:
+                        player_data["equippedWeapons"] = player_data["weapons"]
+                    del player_data["weapons"]
+                
                 TextStyle.print_class("Information", f"\nGame '{save_files[index][:-5]}' loaded successfully!")
                 return True, explored, current_save_file, current_system, ship_inventory, home_inventory, player_data
             else:
@@ -215,17 +246,10 @@ def travel_to_new_system(player_data, explored):
             player_data["energy"] -= energy_cost
             player_data["universal_signature"] = min(player_data["universal_signature"] + energy_cost, 100)
             player_data["security_zone"] = security_zone
-            explored = False  # New system, needs exploration
+            explored = False
             player_data["location"] = "Unknown System"
             TextStyle.print_class("Information", f"\nTraveled to a new system in {zone_name}. Energy consumed: {energy_cost}")
             TextStyle.print_class("Information", f"Universal Signature increased to {player_data['universal_signature']}")
-            
-            #encounter_chance = int((1 - security_zone) * player_data["universal_signature"])
-            #roll, roll_str = roll_percentile()
-            #if roll <= encounter_chance:
-            #    TextStyle.print_class("Warning", f"Encounter Roll {roll_str} ({roll}%): Hostile ship detected! (Chance {encounter_chance}%)")
-            #else:
-            #    TextStyle.print_class("Information", f"Encounter Roll {roll_str} ({roll}%): No encounter. (Chance {encounter_chance}%)")
             
             input("Press Enter to continue...")
             return explored
@@ -234,10 +258,15 @@ def travel_to_new_system(player_data, explored):
             TextStyle.print_class("Warning", "\nInvalid input! Please enter a number.")
             input("Press Enter to continue...")
 
-def experimental_menu(enemy_npc, player_data):
+def experimental_menu(enemy_npc, player_data, ship_inventory=None):
+    if enemy_npc is None:
+        enemy_npc = {}
+    if ship_inventory is None:
+        ship_inventory = []
+    
     while True:
         display_experimental_menu()
-        choice = input("\nEnter your choice (0-3): ")
+        choice = input("\nEnter your choice (0-3): ").strip()
         
         if choice == "0":
             TextStyle.print_class("Information", "\nReturning to main menu...")
@@ -253,7 +282,7 @@ def experimental_menu(enemy_npc, player_data):
             if choice_int == 1:
                 while True:
                     display_create_ship_menu()
-                    sub_choice = input("\nEnter your choice (0-3): ")
+                    sub_choice = input("\nEnter your choice (0-3): ").strip()
                     if sub_choice == "0":
                         break
                     try:
@@ -262,9 +291,10 @@ def experimental_menu(enemy_npc, player_data):
                             TextStyle.print_class("Warning", "\nInvalid choice! Please select 0-3.")
                             input("Press Enter to continue...")
                         elif sub_choice_int == 1:
-                            enemy_npc = ships.create_ship(alignment="Bad")
+                            enemy_npc.clear()
+                            enemy_npc.update(ships.create_ship(alignment="Bad", ship_inventory=ship_inventory))
                         elif sub_choice_int == 2:
-                            ships.create_ship(alignment="Good")
+                            ships.create_ship(alignment="Good", ship_inventory=ship_inventory)
                         elif sub_choice_int == 3:
                             TextStyle.print_class("Information", "\nCreating Trader NPC... (Feature under development)")
                         input("Press Enter to continue...")
@@ -277,27 +307,60 @@ def experimental_menu(enemy_npc, player_data):
             elif choice_int == 3:
                 while True:
                     display_combat_menu()
-                    sub_choice = input("\nEnter your choice (0-2): ")
+                    sub_choice = input("\nEnter your choice (0-3): ").strip()
                     if sub_choice == "0":
                         break
                     try:
                         sub_choice_int = int(sub_choice)
-                        if sub_choice_int < 0 or sub_choice_int > 2:
-                            TextStyle.print_class("Warning", "\nInvalid choice! Please select 0-2.")
+                        if sub_choice_int < 0 or sub_choice_int > 3:
+                            TextStyle.print_class("Warning", "\nInvalid choice! Please select 0-3.")
                             input("Press Enter to continue...")
-                        elif sub_choice_int == 1:
-                            enemy_npc = ships.create_ship(alignment="Bad")
-                        elif sub_choice_int == 2:
-                            if enemy_npc:
-                                if "initiative_modifier" not in player_data:
-                                    TextStyle.print_class("Information", "\nInitializing test player ship for combat...")
-                                    player_data = ships.create_ship(alignment="Player")
-                                    player_data["location"] = "Test System"
-                                    player_data["universal_signature"] = 0
-                                    player_data["security_zone"] = 0.6
-                                combat.initiate_combat(player_data, enemy_npc)
-                            else:
+                            continue
+                        
+                        ship_classes = ships.load_ship_data()["shipCustomization"]["classes"]
+                        class_names = [cls["name"] for cls in ship_classes]
+                        
+                        if sub_choice_int == 1:  # Create Enemy NPC
+                            display_create_enemy_npc_menu()
+                            npc_choice = input("\nSelect a ship class (0-4): ").strip()
+                            try:
+                                npc_idx = int(npc_choice)
+                                if npc_idx == 0:
+                                    continue
+                                if 1 <= npc_idx <= len(class_names):
+                                    enemy_npc.clear()
+                                    enemy_npc.update(ships.create_ship(alignment="Bad", ship_type=class_names[npc_idx - 1], ship_inventory=ship_inventory))
+                                    TextStyle.print_class("Success_Mode_Line", f"Created {enemy_npc['name']}!")
+                            except ValueError:
+                                TextStyle.print_class("Warning", "Invalid input! Please enter a number.")
+                        
+                        elif sub_choice_int == 2:  # Create Player
+                            display_create_player_menu()
+                            player_choice = input("\nSelect a ship class (0-4): ").strip()
+                            try:
+                                player_idx = int(player_choice)
+                                if player_idx == 0:
+                                    continue
+                                if 1 <= player_idx <= len(class_names):
+                                    player_data.clear()
+                                    player_data.update(ships.create_ship(alignment="Player", ship_type=class_names[player_idx - 1], ship_inventory=ship_inventory))
+                                    ships.print_ship_details(player_data)
+                                    TextStyle.print_class("Success_Mode_Line", f"Created {player_data['name']}!")
+                            except ValueError:
+                                TextStyle.print_class("Warning", "Invalid input! Please enter a number.")
+                        
+                        elif sub_choice_int == 3:  # Initiate Combat
+                            if not enemy_npc:
                                 TextStyle.print_class("Warning", "\nNo Enemy Created! Please create an Enemy NPC first.")
+                            elif not all(key in player_data for key in ["initiative_modifier", "hull", "max_hull", "equippedWeapons", "energy"]):
+                                TextStyle.print_class("Warning", "\nNo Player Created! Please create a Test Player first.")
+                            else:
+                                combat.initiate_combat(player_data, enemy_npc, ship_inventory)
+                                TextStyle.print_class("Information", "\nCombat concluded. Player and Enemy entities destroyed.")
+                                player_data.clear()
+                                enemy_npc.clear()
+                                ship_inventory.clear()
+                        
                         input("Press Enter to continue...")
                     except ValueError:
                         TextStyle.print_class("Warning", "\nInvalid input! Please enter a number.")
